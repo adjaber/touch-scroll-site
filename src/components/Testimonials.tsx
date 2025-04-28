@@ -1,36 +1,47 @@
 
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
-
-const testimonials = [
-  {
-    name: "Sarah Thompson",
-    location: "United States",
-    image: "https://randomuser.me/api/portraits/women/32.jpg",
-    content: "TraveleSIM made my Europe trip so much easier. I never had to worry about finding WiFi or buying local SIMs. The setup was incredibly simple, and the data speed was excellent throughout my journey."
-  },
-  {
-    name: "Michael Chen",
-    location: "Australia",
-    image: "https://randomuser.me/api/portraits/men/45.jpg",
-    content: "As a digital nomad, staying connected is essential for my work. TraveleSIM has been a game-changer for me, allowing me to seamlessly transition between countries without ever losing connectivity."
-  },
-  {
-    name: "Elena Rodriguez",
-    location: "Spain",
-    image: "https://randomuser.me/api/portraits/women/63.jpg",
-    content: "I was skeptical about eSIMs at first, but TraveleSIM converted me! The customer service was exceptional when I needed help, and the coverage was perfect during my Southeast Asia adventure."
-  }
-];
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/translations';
 
 const Testimonials = () => {
+  const { language } = useLanguage();
+  const t = translations[language].testimonials;
+
+  const testimonials = [
+    {
+      name: language === 'ar' ? 'سارة طومسون' : 'Sarah Thompson',
+      location: language === 'ar' ? 'الولايات المتحدة' : 'United States',
+      image: "https://randomuser.me/api/portraits/women/32.jpg",
+      content: language === 'ar' 
+        ? 'جعلت TraveleSIM رحلتي إلى أوروبا أسهل بكثير. لم أكن بحاجة للقلق بشأن العثور على WiFi أو شراء بطاقات SIM محلية. كان الإعداد بسيطًا للغاية، وكانت سرعة البيانات ممتازة طوال رحلتي.'
+        : "TraveleSIM made my Europe trip so much easier. I never had to worry about finding WiFi or buying local SIMs. The setup was incredibly simple, and the data speed was excellent throughout my journey."
+    },
+    {
+      name: language === 'ar' ? 'مايكل تشن' : 'Michael Chen',
+      location: language === 'ar' ? 'أستراليا' : 'Australia',
+      image: "https://randomuser.me/api/portraits/men/45.jpg",
+      content: language === 'ar'
+        ? 'كمسافر رقمي، البقاء متصلاً أمر ضروري لعملي. كانت TraveleSIM بمثابة نقلة نوعية بالنسبة لي، حيث سمحت لي بالانتقال بسلاسة بين البلدان دون فقدان الاتصال.'
+        : "As a digital nomad, staying connected is essential for my work. TraveleSIM has been a game-changer for me, allowing me to seamlessly transition between countries without ever losing connectivity."
+    },
+    {
+      name: language === 'ar' ? 'إيلينا رودريغيز' : 'Elena Rodriguez',
+      location: language === 'ar' ? 'إسبانيا' : 'Spain',
+      image: "https://randomuser.me/api/portraits/women/63.jpg",
+      content: language === 'ar'
+        ? 'كنت متشككة في البداية بشأن eSIMs، لكن TraveleSIM أقنعتني! كانت خدمة العملاء استثنائية عندما احتجت إلى المساعدة، وكانت التغطية مثالية خلال مغامرتي في جنوب شرق آسيا.'
+        : "I was skeptical about eSIMs at first, but TraveleSIM converted me! The customer service was exceptional when I needed help, and the coverage was perfect during my Southeast Asia adventure."
+    }
+  ];
+
   return (
-    <section id="testimonials" className="section-padding">
+    <section id="testimonials" className="section-padding" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Travelers Say</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.title}</h2>
           <p className="text-gray-600 text-lg">
-            Join thousands of happy travelers who stay connected with our eSIMs
+            {t.subtitle}
           </p>
         </div>
 
@@ -63,11 +74,11 @@ const Testimonials = () => {
         </div>
 
         <div className="mt-12 bg-travel-blue/10 p-8 rounded-lg text-center">
-          <h3 className="text-2xl font-bold mb-4">Ready to Experience Seamless Global Connectivity?</h3>
+          <h3 className="text-2xl font-bold mb-4">{t.cta.title}</h3>
           <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
-            Join thousands of travelers who enjoy hassle-free internet access worldwide with TraveleSIM's eSIM technology.
+            {t.cta.subtitle}
           </p>
-          <button className="btn-primary">Get Your eSIM Today</button>
+          <button className="btn-primary">{t.cta.button}</button>
         </div>
       </div>
     </section>

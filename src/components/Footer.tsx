@@ -1,10 +1,15 @@
 
 import React from 'react';
 import { Globe } from "lucide-react";
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/translations';
 
 const Footer = () => {
+  const { language } = useLanguage();
+  const t = translations[language].footer;
+
   return (
-    <footer className="bg-gray-900 text-white pt-12 pb-6">
+    <footer className="bg-gray-900 text-white pt-12 pb-6" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
@@ -13,7 +18,10 @@ const Footer = () => {
               <span className="text-lg font-bold">TraveleSIM</span>
             </div>
             <p className="text-gray-400 mb-4">
-              Your global connectivity solution for hassle-free travel
+              {language === 'ar' 
+                ? 'حل الاتصال العالمي الخاص بك للسفر بدون متاعب'
+                : 'Your global connectivity solution for hassle-free travel'
+              }
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white">
@@ -37,33 +45,33 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-bold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-bold text-lg mb-4">{t.quickLinks}</h3>
             <ul className="space-y-2">
-              <li><a href="#home" className="text-gray-400 hover:text-white">Home</a></li>
-              <li><a href="#how-it-works" className="text-gray-400 hover:text-white">How It Works</a></li>
-              <li><a href="#destinations" className="text-gray-400 hover:text-white">Destinations</a></li>
-              <li><a href="#benefits" className="text-gray-400 hover:text-white">Benefits</a></li>
-              <li><a href="#testimonials" className="text-gray-400 hover:text-white">Testimonials</a></li>
+              <li><a href="#home" className="text-gray-400 hover:text-white">{t.links.home}</a></li>
+              <li><a href="#how-it-works" className="text-gray-400 hover:text-white">{t.links.howItWorks}</a></li>
+              <li><a href="#destinations" className="text-gray-400 hover:text-white">{t.links.destinations}</a></li>
+              <li><a href="#benefits" className="text-gray-400 hover:text-white">{t.links.benefits}</a></li>
+              <li><a href="#testimonials" className="text-gray-400 hover:text-white">{t.links.testimonials}</a></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-bold text-lg mb-4">Resources</h3>
+            <h3 className="font-bold text-lg mb-4">{t.resources}</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white">FAQs</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Support Center</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Blog</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Compatibility Check</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Coverage Map</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white">{t.links.faqs}</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white">{t.links.support}</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white">{t.links.blog}</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white">{t.links.compatibility}</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white">{t.links.coverage}</a></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-bold text-lg mb-4">Contact Us</h3>
+            <h3 className="font-bold text-lg mb-4">{t.contactUs}</h3>
             <ul className="space-y-2 text-gray-400">
               <li>Email: support@travelesim.com</li>
-              <li>Phone: +1 (888) 123-4567</li>
-              <li>Hours: 24/7 Customer Support</li>
+              <li>{language === 'ar' ? 'الهاتف: ' : 'Phone: '}+1 (888) 123-4567</li>
+              <li>{language === 'ar' ? 'ساعات العمل: دعم على مدار 24/7' : 'Hours: 24/7 Customer Support'}</li>
             </ul>
           </div>
         </div>
@@ -71,12 +79,12 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-6 mt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              &copy; {new Date().getFullYear()} TraveleSIM. All rights reserved.
+              &copy; {new Date().getFullYear()} TraveleSIM. {t.rights}
             </p>
             <div className="flex space-x-4 text-sm text-gray-400">
-              <a href="#" className="hover:text-white">Privacy Policy</a>
-              <a href="#" className="hover:text-white">Terms of Service</a>
-              <a href="#" className="hover:text-white">Cookie Policy</a>
+              <a href="#" className="hover:text-white">{language === 'ar' ? 'سياسة الخصوصية' : 'Privacy Policy'}</a>
+              <a href="#" className="hover:text-white">{language === 'ar' ? 'شروط الخدمة' : 'Terms of Service'}</a>
+              <a href="#" className="hover:text-white">{language === 'ar' ? 'سياسة ملفات تعريف الارتباط' : 'Cookie Policy'}</a>
             </div>
           </div>
         </div>
