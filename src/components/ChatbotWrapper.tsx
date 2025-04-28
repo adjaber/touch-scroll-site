@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 
 type BubbleProps = {
   typebot: string;
@@ -16,60 +16,71 @@ type BubbleProps = {
   };
 };
 
-// Create a wrapper for the Bubble component
 const ChatbotWrapper = () => {
-  React.useEffect(() => {
-    // Dynamically load the script
+  useEffect(() => {
+    // Create script element
     const script = document.createElement('script');
     script.src = "https://unpkg.com/@typebot.io/js@0.2/dist/web.js";
     script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      // Clean up
-      document.body.removeChild(script);
-    };
-  }, []);
-
-  // Define the props for Bubble
-  const bubbleProps: BubbleProps = {
-    typebot: "ecoesim-ai-chat",
-    apiHost: "https://typebot.io",
-    previewMessage: {
-      message: "I am your ESIM travel assistant!",
-      autoShowDelay: 5000,
-      avatarUrl:
-        "https://media0.giphy.com/media/dzBLyjVBCtWgGPiXCJ/giphy-downsized.gif?cid=fe3852a3fbosw7q8hxkk92to3z05mkvobkpohmh86uo3nf8v&ep=v1_gifs_search&rid=giphy-downsized.gif&ct=g",
-    },
-    theme: { button: { backgroundColor: "#1D1D1D" } }
-  };
-
-  // Create the element with the necessary attributes
-  React.useEffect(() => {
-    const typebotEl = document.createElement('typebot-bubble');
-    typebotEl.setAttribute('typebot', bubbleProps.typebot);
-    typebotEl.setAttribute('api-host', bubbleProps.apiHost);
-
-    if (bubbleProps.previewMessage) {
-      typebotEl.setAttribute('preview-message', bubbleProps.previewMessage.message);
-      typebotEl.setAttribute('auto-show-delay', String(bubbleProps.previewMessage.autoShowDelay));
-      if (bubbleProps.previewMessage.avatarUrl) {
-        typebotEl.setAttribute('avatar-url', bubbleProps.previewMessage.avatarUrl);
+    
+    // Wait for script to load before creating the bubble
+    script.onload = () => {
+      // Clean up any existing typebot instances
+      const existingTypebot = document.querySelector('typebot-bubble');
+      if (existingTypebot) {
+        existingTypebot.remove();
       }
-    }
-
-    if (bubbleProps.theme?.button?.backgroundColor) {
-      typebotEl.setAttribute('button-color', bubbleProps.theme.button.backgroundColor);
-    }
-
-    document.body.appendChild(typebotEl);
-
+      
+      // Create the typebot element
+      const typebotEl = document.createElement('typebot-bubble');
+      typebotEl.setAttribute('typebot', 'ecoesim-ai-chat');
+      typebotEl.setAttribute('api-host', 'https://typebot.io');
+      typebotEl.setAttribute('preview-message', 'I am your ESIM travel assistant!');
+      typebotEl.setAttribute('auto-show-delay', '5000');
+      typebotEl.setAttribute('avatar-url', 'https://media0.giphy.com/media/dzBLyjVBCtWgGPiXCJ/giphy-downsized.gif?cid=fe3852a3fbosw7q8hxkk92to3z05mkvobkpohmh86uo3nf8v&ep=v1_gifs_search&rid=giphy-downsized.gif&ct=g');
+      typebotEl.setAttribute('button-color', '#1D1D1D');
+      
+      document.body.appendChild(typebotEl);
+    };
+    
+    // Add script to DOM
+    document.body.appendChild(script);
+    
+    // Clean up function
     return () => {
-      document.body.removeChild(typebotEl);
+      // Remove the script when component unmounts
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+      
+      // Remove any typebot instances
+      const typebotEl = document.querySelector('typebot-bubble');
+      if (typebotEl) {
+        typebotEl.remove();
+      }
+    };
+  }, []);
+  
+  // Add manual launch function to window for debugging
+  useEffect(() => {
+    // @ts-ignore
+    window.launchChatbot = () => {
+      const typebotEl = document.querySelector('typebot-bubble');
+      if (typebotEl) {
+        // @ts-ignore
+        typebotEl.open?.();
+        console.log('Attempting to open chatbot');
+      } else {
+        console.error('Chatbot element not found');
+      }
+    };
+    
+    return () => {
+      // @ts-ignore
+      window.launchChatbot = undefined;
     };
   }, []);
 
-  // This component doesn't render anything visible directly
   return null;
 };
 

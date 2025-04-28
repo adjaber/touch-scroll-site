@@ -11,6 +11,22 @@ const Navbar = () => {
   const { language } = useLanguage();
   const t = translations[language];
 
+  const launchChatbot = () => {
+    // @ts-ignore
+    if (window.launchChatbot) {
+      // @ts-ignore
+      window.launchChatbot();
+    } else {
+      console.error("Chatbot launcher not found");
+      // Fallback - try to find and click the typebot button
+      const typebotButton = document.querySelector('typebot-bubble')?.shadowRoot?.querySelector('button');
+      if (typebotButton) {
+        typebotButton.click();
+        console.log('Clicked typebot button via fallback');
+      }
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-white bg-opacity-95 backdrop-blur-sm shadow-sm">
       <div className="container mx-auto px-4 md:px-6">
@@ -30,7 +46,7 @@ const Navbar = () => {
           </nav>
 
           <div className="hidden md:block">
-            <Button className="btn-primary">{t.nav.getEsim}</Button>
+            <Button className="btn-primary" onClick={launchChatbot}>{t.nav.getEsim}</Button>
           </div>
 
           <button 
@@ -56,7 +72,10 @@ const Navbar = () => {
             <a href="#benefits" className="text-gray-700 hover:text-travel-blue py-2 font-medium" onClick={() => setIsMenuOpen(false)}>{t.nav.benefits}</a>
             <a href="#testimonials" className="text-gray-700 hover:text-travel-blue py-2 font-medium" onClick={() => setIsMenuOpen(false)}>{t.nav.testimonials}</a>
             <LanguageSwitcher />
-            <Button className="btn-primary w-full mt-2" onClick={() => setIsMenuOpen(false)}>{t.nav.getEsim}</Button>
+            <Button className="btn-primary w-full mt-2" onClick={() => {
+              launchChatbot();
+              setIsMenuOpen(false);
+            }}>{t.nav.getEsim}</Button>
           </nav>
         </div>
       )}
