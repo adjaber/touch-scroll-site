@@ -9,20 +9,6 @@ const Hero = () => {
   const { language } = useLanguage();
   const t = translations[language];
 
-  const launchChatbot = () => {
-    // @ts-ignore
-    if (window.launchChatbot) {
-      // @ts-ignore
-      window.launchChatbot();
-    } else {
-      // Fallback - try to find and click the typebot button
-      const typebotButton = document.querySelector('typebot-bubble')?.shadowRoot?.querySelector('button');
-      if (typebotButton) {
-        typebotButton.click();
-      }
-    }
-  };
-
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -51,12 +37,6 @@ const Hero = () => {
             {language === 'ar' ? 'اتصال بيانات فوري في أكثر من 190 دولة. لا حاجة لبطاقة SIM فعلية.' : 'Instant data connectivity in over 190+ countries. No physical SIM card needed.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button 
-              className="bg-travel-blue hover:bg-travel-blue/90 text-white px-8 py-6 rounded-full text-lg"
-              onClick={launchChatbot}
-            >
-              {language === 'ar' ? 'احصل على eSIM الآن' : 'Get Your eSIM Now'}
-            </Button>
             <Button 
               variant="outline" 
               className="bg-transparent border border-white text-white hover:bg-white hover:text-black px-8 py-6 rounded-full text-lg"
