@@ -116,7 +116,14 @@ const Destinations = () => {
           {selectedDestination !== null && (
             <DialogContent className="sm:max-w-md">
               <DialogHeader>
-                <DialogTitle className="text-2xl">{destinations[selectedDestination].name} {language === 'ar' ? 'خطط الـ eSIM' : 'eSIM Plans'}</DialogTitle>
+                <div className="flex items-center justify-between">
+                  <DialogTitle className="text-2xl">{destinations[selectedDestination].name} {language === 'ar' ? 'خطط الـ eSIM' : 'eSIM Plans'}</DialogTitle>
+                  <img 
+                    src="/lovable-uploads/b0a38b67-6687-4c50-9633-3fa5990c17ed.png" 
+                    alt="NewTech Logo" 
+                    className="h-8 w-auto"
+                  />
+                </div>
                 <DialogDescription>
                   {language === 'ar' ? 'اختر خطة البيانات المناسبة لرحلتك' : 'Choose a data plan suitable for your trip'}
                 </DialogDescription>
@@ -140,8 +147,13 @@ const Destinations = () => {
                 ))}
               </div>
               
-              <div className="mt-4 text-sm text-gray-500">
-                {language === 'ar' ? 'جميع الخطط تشمل تنشيط فوري والدعم على مدار 24/7' : 'All plans include instant activation and 24/7 support'}
+              <div className="mt-4 text-sm text-gray-500 flex justify-between items-center">
+                <div>
+                  {language === 'ar' ? 'جميع الخطط تشمل تنشيط فوري والدعم على مدار 24/7' : 'All plans include instant activation and 24/7 support'}
+                </div>
+                <div>
+                  <a href="tel:+213662417859" className="text-travel-blue hover:underline text-xs">+213 662 417 859</a>
+                </div>
               </div>
             </DialogContent>
           )}

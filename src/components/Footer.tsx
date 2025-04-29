@@ -14,7 +14,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Globe className="h-6 w-6 text-travel-blue" />
+              <img 
+                src="/lovable-uploads/b0a38b67-6687-4c50-9633-3fa5990c17ed.png" 
+                alt="NewTech Logo" 
+                className="h-10 w-auto"
+              />
               <span className="text-lg font-bold">TraveleSIM</span>
             </div>
             <p className="text-gray-400 mb-4">
@@ -22,6 +26,9 @@ const Footer = () => {
                 ? 'حل الاتصال العالمي الخاص بك للسفر بدون متاعب'
                 : 'Your global connectivity solution for hassle-free travel'
               }
+            </p>
+            <p className="text-gray-400 mb-4">
+              A NewTech Corporate company
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white">
@@ -69,8 +76,14 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-4">{t.contactUs}</h3>
             <ul className="space-y-2 text-gray-400">
-              <li>Email: support@travelesim.com</li>
-              <li>{language === 'ar' ? 'الهاتف: ' : 'Phone: '}+1 (888) 123-4567</li>
+              <li className="flex items-center gap-2">
+                <span>Email:</span> 
+                <a href="mailto:adjebbar@zohomail.com" className="hover:text-white">adjebbar@zohomail.com</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <span>{language === 'ar' ? 'الهاتف: ' : 'Phone: '}</span>
+                <a href="tel:+213662417859" className="hover:text-white">+213 662 417 859</a>
+              </li>
               <li>{language === 'ar' ? 'ساعات العمل: دعم على مدار 24/7' : 'Hours: 24/7 Customer Support'}</li>
             </ul>
           </div>
@@ -79,7 +92,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-6 mt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              &copy; {new Date().getFullYear()} TraveleSIM. {t.rights}
+              &copy; {new Date().getFullYear()} NewTech Corporate. {t.rights}
             </p>
             <div className="flex space-x-4 text-sm text-gray-400">
               <a href="#" className="hover:text-white">{language === 'ar' ? 'سياسة الخصوصية' : 'Privacy Policy'}</a>
