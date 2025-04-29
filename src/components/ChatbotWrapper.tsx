@@ -2,48 +2,40 @@
 import React, { useEffect } from 'react';
 
 const ChatbotWrapper = () => {
-  useEffect(() => {
-    // Create script element
-    const script = document.createElement('script');
-    script.src = "https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js";
-    script.async = true;
-    
-    // Wait for script to load before creating the bubble
-    script.onload = () => {
-      // Initialize Typebot popup
-      // @ts-ignore
-      window.Typebot?.initPopup({ typebot: "ecoesim-ai-chat" });
-      
-      console.log('Typebot script loaded and initialized');
-    };
-    
-    // Add script to DOM if not already present
-    if (!document.querySelector('script[src*="typebot.io/js"]')) {
-      document.body.appendChild(script);
-    }
-    
-    // Clean up function
-    return () => {
-      // We don't remove the script on unmount as it might affect other components
-    };
-  }, []);
-  
   // Add manual launch function to window for buttons to use
   useEffect(() => {
-    // @ts-ignore
-    window.launchChatbot = () => {
-      console.log('Launch chatbot function called');
+    // Wait a short moment to ensure Typebot is initialized by the script in index.html
+    const timer = setTimeout(() => {
       // @ts-ignore
-      if (window.Typebot) {
+      window.launchChatbot = () => {
+        console.log('Launch chatbot function called');
+        // Try to use the Typebot global object first
         // @ts-ignore
-        window.Typebot.open();
-        console.log('Attempting to open chatbot via Typebot.open()');
-      } else {
-        console.error('Typebot is not initialized');
-      }
-    };
+        if (window.Typebot) {
+          // @ts-ignore
+          window.Typebot.open();
+          console.log('Attempting to open chatbot via Typebot.open()');
+        } else {
+          // Fallback - try to find and click the typebot button
+          console.log('Typebot global not found, trying to click the bubble button directly');
+          const shadow = document.querySelector('typebot-bubble')?.shadowRoot;
+          if (shadow) {
+            const button = shadow.querySelector('button');
+            if (button) {
+              button.click();
+              console.log('Clicked typebot button directly');
+            } else {
+              console.error('Typebot button not found in shadow DOM');
+            }
+          } else {
+            console.error('Typebot bubble not found');
+          }
+        }
+      };
+    }, 1000); // Give it 1 second to initialize
     
     return () => {
+      clearTimeout(timer);
       // @ts-ignore
       window.launchChatbot = undefined;
     };
