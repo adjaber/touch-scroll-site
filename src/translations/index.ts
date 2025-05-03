@@ -1,3 +1,4 @@
+
 export const translations = {
   en: {
     nav: {
@@ -16,7 +17,7 @@ export const translations = {
       connectedUsers: 'travelers connected this month'
     },
     howItWorks: {
-      title: "How TraveleSIM Works",
+      title: "How ecoESIM Works",
       subtitle: "Get connected in minutes with our simple 4-step process",
       steps: [
         {
@@ -38,7 +39,7 @@ export const translations = {
       ]
     },
     benefits: {
-      title: "Why Choose TraveleSIM",
+      title: "Why Choose ecoESIM",
       subtitle: "Experience the ultimate travel connectivity solution",
       items: [
         {
@@ -80,7 +81,7 @@ export const translations = {
       subtitle: "Join thousands of happy travelers who stay connected with our eSIMs",
       cta: {
         title: "Ready to Experience Seamless Global Connectivity?",
-        subtitle: "Join thousands of travelers who enjoy hassle-free internet access worldwide with TraveleSIM's eSIM technology.",
+        subtitle: "Join thousands of travelers who enjoy hassle-free internet access worldwide with ecoESIM's eSIM technology.",
         button: "Get Your eSIM Today"
       }
     },
@@ -184,7 +185,7 @@ export const translations = {
       subtitle: "انضم إلى آلاف المسافرين السعداء الذين يبقون على اتصال مع eSIMs لدينا",
       cta: {
         title: "هل أنت مستعد لتجربة اتصال عالمي سلس؟",
-        subtitle: "انضم إلى آلاف المسافرين الذين يستمتعون بوصول سهل للإنترنت في جميع أنحاء العالم مع تقنية eSIM من TraveleSIM.",
+        subtitle: "انضم إلى آلاف المسافرين الذين يستمتعون بوصول سهل للإنترنت في جميع أنحاء العالم مع تقنية eSIM من ecoESIM.",
         button: "احصل على eSIM الآن"
       }
     },

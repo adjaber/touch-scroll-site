@@ -19,7 +19,7 @@ const Footer = () => {
                 alt="NewTech Logo" 
                 className="h-10 w-auto"
               />
-              <span className="text-lg font-bold">TraveleSIM</span>
+              <span className="text-lg font-bold">ecoESIM</span>
             </div>
             <p className="text-gray-400 mb-4">
               {language === 'ar' 
