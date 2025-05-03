@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Globe, Menu, X } from "lucide-react";
+import { Globe, Menu, X, Leaf } from "lucide-react";
 import { useLanguage } from '@/context/LanguageContext';
 import { translations } from '@/translations';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -16,8 +16,8 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center gap-2">
-            <Globe className="h-6 w-6 text-travel-blue" />
-            <span className="text-lg font-bold text-gray-900">TraveleSIM</span>
+            <Leaf className="h-6 w-6 text-green-600" />
+            <span className="text-lg font-bold text-gray-900">ecoESIM</span>
           </div>
 
           <nav className={`hidden md:flex items-center gap-6 ${language === 'ar' ? 'rtl' : 'ltr'}`}>

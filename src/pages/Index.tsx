@@ -9,7 +9,7 @@ import Testimonials from '@/components/Testimonials';
 import Footer from '@/components/Footer';
 import ChatbotWrapper from '@/components/ChatbotWrapper';
 import { useLanguage } from '@/context/LanguageContext';
-import { MessageSquare } from "lucide-react";
+import { MessageSquare, Leaf, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
@@ -34,15 +34,33 @@ const Index = () => {
         <div className="container">
           <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
             <div className="p-6">
-              <h2 className="text-2xl font-bold mb-4 text-center">
-                {language === 'ar' ? 'مقارنة الأسعار' : 'Price Comparison'}
-              </h2>
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <Globe className="h-5 w-5 text-green-600" />
+                <h2 className="text-2xl font-bold text-center">
+                  {language === 'ar' ? 'مقارنة الأسعار' : 'Price Comparison'}
+                </h2>
+              </div>
+              <div className="mb-4 bg-green-50 p-3 rounded-lg">
+                <div className="flex items-center gap-2">
+                  <Leaf className="h-5 w-5 text-green-600 flex-shrink-0" />
+                  <p className="text-sm text-green-800">
+                    {language === 'ar' 
+                      ? 'بطاقات eSIM من ecoESIM تقلل النفايات البلاستيكية بنسبة 100٪ مقارنة بالبطاقات التقليدية'
+                      : 'ecoESIM eSIMs reduce plastic waste by 100% compared to traditional SIM cards'}
+                  </p>
+                </div>
+              </div>
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
                     <tr className="bg-gray-100">
                       <th className="py-2 px-4 text-left">{language === 'ar' ? 'الوجهة' : 'Destination'}</th>
-                      <th className="py-2 px-4 text-left">TraveleSIM</th>
+                      <th className="py-2 px-4 text-left">
+                        <div className="flex items-center gap-1">
+                          <Leaf className="h-4 w-4 text-green-600" />
+                          ecoESIM
+                        </div>
+                      </th>
                       <th className="py-2 px-4 text-left">Airalo</th>
                       <th className="py-2 px-4 text-left">GigSky</th>
                       <th className="py-2 px-4 text-left">Holafly</th>
@@ -85,6 +103,11 @@ const Index = () => {
                       {language === 'ar' 
                         ? 'تحدث مع مساعدنا عبر الدردشة للحصول على عروض وخصومات خاصة غير متوفرة عبر موقعنا الإلكتروني. تصل إلى خصم 15%!'
                         : 'Chat with our assistant for special deals and discounts not available through our website. Up to 15% off!'}
+                    </p>
+                    <p className="text-xs text-green-700 mt-1">
+                      {language === 'ar'
+                        ? 'كل عملية شراء من خلال المحادثة تساهم في مبادرات الاستدامة البيئية الخاصة بنا'
+                        : 'Every purchase through chat contributes to our environmental sustainability initiatives'}
                     </p>
                     <Button 
                       onClick={launchChatbot}
