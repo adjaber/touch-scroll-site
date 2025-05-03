@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from '@/context/LanguageContext';
 import { translations } from '@/translations';
-import { MapPin } from "lucide-react";
+import { MapPin, MessageSquare } from "lucide-react";
 import { 
   Dialog,
   DialogContent,
@@ -20,50 +20,66 @@ const Destinations = () => {
 
   const destinations = [
     {
-      name: language === 'ar' ? 'أوروبا' : 'France',
+      name: language === 'ar' ? 'فرنسا' : 'France',
       image: "https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       countries: 1,
       startingPrice: 2.99,
+      competitorPrice: 4.99,
+      competitorName: "Airalo",
       plans: [
-        { name: "Traveler Basic", data: "1GB", validity: "7 days", price: 2.99 },
-        { name: "Traveler Plus", data: "3GB", validity: "15 days", price: 5.99 },
-        { name: "Traveler Pro", data: "5GB", validity: "30 days", price: 9.99 }
+        { name: "Traveler Basic", data: "1GB", validity: "7 days", price: 2.99, competitorPrice: 4.99 },
+        { name: "Traveler Plus", data: "3GB", validity: "15 days", price: 5.99, competitorPrice: 7.99 },
+        { name: "Traveler Pro", data: "5GB", validity: "30 days", price: 9.99, competitorPrice: 12.99 }
       ]
     },
     {
-      name: language === 'ar' ? 'آسيا' : 'Thailand',
+      name: language === 'ar' ? 'تايلاند' : 'Thailand',
       image: "https://images.unsplash.com/photo-1535139262971-c51845709a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       countries: 1,
       startingPrice: 5.99,
+      competitorPrice: 8.99,
+      competitorName: "GigSky",
       plans: [
-        { name: "Explorer Basic", data: "2GB", validity: "7 days", price: 5.99 },
-        { name: "Explorer Plus", data: "5GB", validity: "15 days", price: 9.99 },
-        { name: "Explorer Pro", data: "10GB", validity: "30 days", price: 15.99 }
+        { name: "Explorer Basic", data: "2GB", validity: "7 days", price: 5.99, competitorPrice: 8.99 },
+        { name: "Explorer Plus", data: "5GB", validity: "15 days", price: 9.99, competitorPrice: 13.99 },
+        { name: "Explorer Pro", data: "10GB", validity: "30 days", price: 15.99, competitorPrice: 19.99 }
       ]
     },
     {
-      name: language === 'ar' ? 'أمريكا الشمالية' : 'United States',
+      name: language === 'ar' ? 'الولايات المتحدة' : 'United States',
       image: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       countries: 1,
       startingPrice: 3.99,
+      competitorPrice: 5.99,
+      competitorName: "Ubigi",
       plans: [
-        { name: "USA Basic", data: "1GB", validity: "7 days", price: 3.99 },
-        { name: "USA Plus", data: "3GB", validity: "15 days", price: 7.99 },
-        { name: "USA Pro", data: "5GB", validity: "30 days", price: 12.99 }
+        { name: "USA Basic", data: "1GB", validity: "7 days", price: 3.99, competitorPrice: 5.99 },
+        { name: "USA Plus", data: "3GB", validity: "15 days", price: 7.99, competitorPrice: 9.99 },
+        { name: "USA Pro", data: "5GB", validity: "30 days", price: 12.99, competitorPrice: 16.99 }
       ]
     },
     {
-      name: language === 'ar' ? 'أمريكا الجنوبية' : 'Brazil',
+      name: language === 'ar' ? 'البرازيل' : 'Brazil',
       image: "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       countries: 1,
       startingPrice: 4.99,
+      competitorPrice: 6.99,
+      competitorName: "Holafly",
       plans: [
-        { name: "Brazil Basic", data: "1GB", validity: "7 days", price: 4.99 },
-        { name: "Brazil Plus", data: "2GB", validity: "15 days", price: 8.99 },
-        { name: "Brazil Pro", data: "5GB", validity: "30 days", price: 14.99 }
+        { name: "Brazil Basic", data: "1GB", validity: "7 days", price: 4.99, competitorPrice: 6.99 },
+        { name: "Brazil Plus", data: "2GB", validity: "15 days", price: 8.99, competitorPrice: 11.99 },
+        { name: "Brazil Pro", data: "5GB", validity: "30 days", price: 14.99, competitorPrice: 18.99 }
       ]
     }
   ];
+
+  const launchChatbot = () => {
+    // @ts-ignore
+    if (window.launchChatbot) {
+      // @ts-ignore
+      window.launchChatbot();
+    }
+  };
 
   return (
     <section id="destinations" className="section-padding bg-gray-50" dir={language === 'ar' ? 'rtl' : 'ltr'}>
@@ -73,6 +89,14 @@ const Destinations = () => {
           <p className="text-gray-600 text-lg">
             {t.subtitle}
           </p>
+          <div className="mt-4 bg-green-100 p-4 rounded-lg inline-block">
+            <p className="text-green-800 font-semibold flex items-center gap-2">
+              <MessageSquare className="h-5 w-5" />
+              {language === 'ar' 
+                ? 'أسعار حصرية متاحة عبر المحادثة فقط! تحقق من العروض الآن'
+                : 'Exclusive prices available via chat only! Check out our deals now'}
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -92,22 +116,39 @@ const Destinations = () => {
                 <h3 className="text-xl font-semibold mb-2">{destination.name}</h3>
                 <div className="flex justify-between items-center mb-3">
                   <span className="text-gray-600 text-sm">1GB / 7 days</span>
-                  <span className="text-travel-blue font-bold">${destination.startingPrice}</span>
+                  <div className="flex flex-col items-end">
+                    <span className="text-travel-blue font-bold">${destination.startingPrice}</span>
+                    <span className="text-gray-400 text-xs line-through">${destination.competitorPrice} ({destination.competitorName})</span>
+                  </div>
                 </div>
-                <Button 
-                  className="w-full bg-travel-blue hover:bg-travel-blue/90"
-                  onClick={() => setSelectedDestination(index)}
-                >
-                  {t.explorePlans}
-                </Button>
+                <div className="flex flex-col gap-2">
+                  <Button 
+                    className="w-full bg-travel-blue hover:bg-travel-blue/90"
+                    onClick={() => setSelectedDestination(index)}
+                  >
+                    {t.explorePlans}
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    className="w-full border-travel-blue text-travel-blue hover:bg-travel-blue hover:text-white"
+                    onClick={launchChatbot}
+                  >
+                    <MessageSquare className="h-4 w-4 mr-2" />
+                    {language === 'ar' ? 'أفضل سعر عبر المحادثة' : 'Best Price via Chat'}
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ))}
         </div>
         
         <div className="mt-12 text-center">
-          <Button variant="outline" className="border-travel-blue text-travel-blue hover:bg-travel-blue hover:text-white">
-            {t.viewAll}
+          <Button 
+            onClick={launchChatbot} 
+            className="bg-travel-blue hover:bg-travel-blue/90 gap-2"
+          >
+            <MessageSquare className="h-4 w-4" />
+            {language === 'ar' ? 'تحدث معنا للحصول على أسعار أفضل' : 'Chat for Better Prices'}
           </Button>
         </div>
 
@@ -134,15 +175,34 @@ const Destinations = () => {
                   <div key={idx} className="border rounded-lg p-4 hover:border-travel-blue transition-colors">
                     <div className="flex justify-between items-center mb-2">
                       <h4 className="font-medium text-lg">{plan.name}</h4>
-                      <span className="text-travel-blue font-bold">${plan.price}</span>
+                      <div className="flex flex-col items-end">
+                        <span className="text-travel-blue font-bold">${plan.price}</span>
+                        <span className="text-xs text-gray-400 line-through">${plan.competitorPrice} ({destinations[selectedDestination].competitorName})</span>
+                      </div>
                     </div>
                     <div className="grid grid-cols-2 gap-2 text-sm text-gray-600">
                       <div>{language === 'ar' ? 'بيانات' : 'Data'}: <span className="font-semibold">{plan.data}</span></div>
                       <div>{language === 'ar' ? 'صلاحية' : 'Validity'}: <span className="font-semibold">{plan.validity}</span></div>
                     </div>
-                    <Button className="w-full mt-3 bg-travel-blue hover:bg-travel-blue/90">
-                      {language === 'ar' ? 'اختر هذه الخطة' : 'Select This Plan'}
-                    </Button>
+                    <div className="mt-3 flex gap-2">
+                      <Button className="w-full bg-travel-blue hover:bg-travel-blue/90">
+                        {language === 'ar' ? 'اختر هذه الخطة' : 'Select This Plan'}
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        className="min-w-[40px] border-green-500 text-green-600 hover:bg-green-500 hover:text-white"
+                        onClick={launchChatbot}
+                      >
+                        <MessageSquare className="h-4 w-4" />
+                      </Button>
+                    </div>
+                    <div className="mt-2 text-center">
+                      <p className="text-xs text-green-600 font-medium">
+                        {language === 'ar' 
+                          ? 'متوفر بسعر أقل عبر المحادثة! وفر أكثر' 
+                          : 'Available at a lower price via chat! Save more'}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
