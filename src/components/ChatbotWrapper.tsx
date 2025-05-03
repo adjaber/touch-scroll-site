@@ -1,12 +1,12 @@
 
 import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { MessageSquare } from "lucide-react";
+import { MessageSquare, ShoppingCart } from "lucide-react";
 import { useLanguage } from '@/context/LanguageContext';
 
 const ChatbotWrapper = () => {
   const [showPrompt, setShowPrompt] = useState(false);
-  const { language } = useLanguage();
+  const { language, dir } = useLanguage();
   
   // Add manual launch function to window for buttons to use
   useEffect(() => {
@@ -81,27 +81,28 @@ const ChatbotWrapper = () => {
       <div className="fixed bottom-24 right-6 z-50 flex flex-col items-end">
         {showPrompt && (
           <div 
-            className="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg mb-3 max-w-xs animate-bounce"
+            className={`bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg mb-3 max-w-xs animate-bounce ${dir === 'rtl' ? 'text-right' : 'text-left'}`}
             onClick={(e) => e.stopPropagation()}
+            dir={dir}
           >
             <p className="text-sm font-medium">
               {language === 'ar' 
-                ? 'احصل على أفضل أسعار eSIM هنا! تحدث مع مساعدنا الآن'
-                : 'Get the BEST eSIM prices here! Chat with our assistant now'}
+                ? 'احصل على أفضل أسعار eSIM هنا! اشترِ الآن من خلال المحادثة'
+                : 'Get the BEST eSIM prices here! Buy now through chat'}
             </p>
-            <div className="mt-2 flex justify-between">
+            <div className={`mt-2 flex ${dir === 'rtl' ? 'flex-row-reverse' : 'flex-row'} justify-between`}>
               <span className="text-xs text-green-600 font-bold">
-                {language === 'ar' ? 'حصري عبر المحادثة فقط!' : 'EXCLUSIVE via chat only!'}
+                {language === 'ar' ? 'عروض حصرية عبر المحادثة!' : 'EXCLUSIVE deals via chat!'}
               </span>
               <span className="text-xs text-gray-500">
-                {language === 'ar' ? 'أسعار أقل من المنافسين' : 'Lower than competitors'}
+                {language === 'ar' ? 'وفر أكثر من 50%' : 'Save over 50%'}
               </span>
             </div>
           </div>
         )}
         <Button 
           onClick={handleChatButtonClick}
-          className="bg-travel-blue hover:bg-travel-blue/90 rounded-full h-14 w-14 flex items-center justify-center shadow-lg relative"
+          className="bg-green-600 hover:bg-green-700 rounded-full h-14 w-14 flex items-center justify-center shadow-lg relative"
         >
           <MessageSquare className="h-6 w-6" />
           <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">

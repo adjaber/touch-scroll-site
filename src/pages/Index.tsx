@@ -9,11 +9,11 @@ import Testimonials from '@/components/Testimonials';
 import Footer from '@/components/Footer';
 import ChatbotWrapper from '@/components/ChatbotWrapper';
 import { useLanguage } from '@/context/LanguageContext';
-import { MessageSquare, Leaf, Globe } from "lucide-react";
+import { MessageSquare, Leaf, Globe, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
-  const { language } = useLanguage();
+  const { language, dir } = useLanguage();
   
   const launchChatbot = () => {
     // @ts-ignore
@@ -24,7 +24,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col" dir={dir}>
       <Navbar />
       <Hero />
       <HowItWorks />
@@ -50,40 +50,40 @@ const Index = () => {
                   </p>
                 </div>
               </div>
-              <div className="overflow-x-auto">
-                <table className="w-full">
+              <div className="overflow-x-auto" dir={dir}>
+                <table className={`w-full ${dir === 'rtl' ? 'text-right' : 'text-left'}`}>
                   <thead>
                     <tr className="bg-gray-100">
-                      <th className="py-2 px-4 text-left">{language === 'ar' ? 'الوجهة' : 'Destination'}</th>
-                      <th className="py-2 px-4 text-left">
+                      <th className="py-2 px-4">{language === 'ar' ? 'الوجهة' : 'Destination'}</th>
+                      <th className="py-2 px-4">
                         <div className="flex items-center gap-1">
                           <Leaf className="h-4 w-4 text-green-600" />
                           ecoESIM
                         </div>
                       </th>
-                      <th className="py-2 px-4 text-left">Airalo</th>
-                      <th className="py-2 px-4 text-left">GigSky</th>
-                      <th className="py-2 px-4 text-left">Holafly</th>
+                      <th className="py-2 px-4">Airalo</th>
+                      <th className="py-2 px-4">GigSky</th>
+                      <th className="py-2 px-4">Holafly</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="border-b">
                       <td className="py-2 px-4">{language === 'ar' ? 'فرنسا (1GB)' : 'France (1GB)'}</td>
-                      <td className="py-2 px-4 font-bold text-travel-blue">$2.99</td>
+                      <td className="py-2 px-4 font-bold text-green-600">$2.99</td>
                       <td className="py-2 px-4">$9.98</td>
                       <td className="py-2 px-4">$11.98</td>
                       <td className="py-2 px-4">$11.98</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-2 px-4">{language === 'ar' ? 'تايلاند (2GB)' : 'Thailand (2GB)'}</td>
-                      <td className="py-2 px-4 font-bold text-travel-blue">$5.99</td>
+                      <td className="py-2 px-4 font-bold text-green-600">$5.99</td>
                       <td className="py-2 px-4">$17.98</td>
                       <td className="py-2 px-4">$15.98</td>
                       <td className="py-2 px-4">$19.98</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-2 px-4">{language === 'ar' ? 'الولايات المتحدة (1GB)' : 'USA (1GB)'}</td>
-                      <td className="py-2 px-4 font-bold text-travel-blue">$3.99</td>
+                      <td className="py-2 px-4 font-bold text-green-600">$3.99</td>
                       <td className="py-2 px-4">$9.00</td>
                       <td className="py-2 px-4">$11.98</td>
                       <td className="py-2 px-4">$13.98</td>
@@ -92,17 +92,17 @@ const Index = () => {
                 </table>
               </div>
               
-              <div className="mt-6 bg-green-50 p-4 rounded-lg">
-                <div className="flex items-start gap-3">
+              <div className="mt-6 bg-green-50 p-4 rounded-lg" dir={dir}>
+                <div className={`flex items-start gap-3 ${dir === 'rtl' ? 'flex-row-reverse text-right' : 'flex-row text-left'}`}>
                   <MessageSquare className="h-5 w-5 text-green-600 mt-1" />
                   <div>
                     <h3 className="font-medium text-green-800">
-                      {language === 'ar' ? 'أسعار حصرية عبر المحادثة!' : 'Exclusive Chat-Only Prices!'}
+                      {language === 'ar' ? 'اشترِ eSIM بأسعار حصرية عبر المحادثة!' : 'Buy eSIMs at Exclusive Chat-Only Prices!'}
                     </h3>
                     <p className="text-sm text-green-700 mt-1">
                       {language === 'ar' 
-                        ? 'تحدث مع مساعدنا عبر الدردشة للحصول على عروض وخصومات خاصة غير متوفرة عبر موقعنا الإلكتروني. تصل إلى خصم 15%!'
-                        : 'Chat with our assistant for special deals and discounts not available through our website. Up to 15% off!'}
+                        ? 'تحدث مع مساعدنا عبر الدردشة للشراء فورًا والحصول على عروض وخصومات خاصة غير متوفرة عبر موقعنا الإلكتروني. وفر حتى 70٪!'
+                        : 'Chat with our assistant to buy instantly and get special deals and discounts not available through our website. Save up to 70%!'}
                     </p>
                     <p className="text-xs text-green-700 mt-1">
                       {language === 'ar'
@@ -112,10 +112,10 @@ const Index = () => {
                     <Button 
                       onClick={launchChatbot}
                       size="sm" 
-                      className="mt-2 bg-green-600 hover:bg-green-700"
+                      className={`mt-2 bg-green-600 hover:bg-green-700 ${dir === 'rtl' ? 'flex flex-row-reverse' : ''}`}
                     >
-                      <MessageSquare className="h-4 w-4 mr-2" />
-                      {language === 'ar' ? 'احصل على سعر خاص الآن' : 'Get Your Special Price Now'}
+                      <MessageSquare className={`h-4 w-4 ${dir === 'rtl' ? 'mr-0 ml-2' : 'ml-0 mr-2'}`} />
+                      {language === 'ar' ? 'اشترِ eSIM الآن' : 'Buy Your eSIM Now'}
                     </Button>
                   </div>
                 </div>
