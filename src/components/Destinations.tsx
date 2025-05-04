@@ -23,13 +23,13 @@ const Destinations = () => {
       name: language === 'ar' ? 'فرنسا' : 'France',
       image: "https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       countries: 1,
-      startingPrice: 2.99,
-      competitorPrice: 19.96, // Doubled
+      startingPrice: 5.98,
+      competitorPrice: 19.96, 
       competitorName: "Airalo",
       plans: [
-        { name: "Traveler Basic", data: "1GB", validity: "7 days", price: 2.99, competitorPrice: 19.96 }, // Doubled
-        { name: "Traveler Plus", data: "3GB", validity: "15 days", price: 5.99, competitorPrice: 31.96 }, // Doubled
-        { name: "Traveler Pro", data: "5GB", validity: "30 days", price: 9.99, competitorPrice: 51.96 }  // Doubled
+        { name: "Traveler Basic", data: "1GB", validity: "7 days", price: 5.98, competitorPrice: 19.96 },
+        { name: "Traveler Plus", data: "3GB", validity: "15 days", price: 11.98, competitorPrice: 31.96 },
+        { name: "Traveler Pro", data: "5GB", validity: "30 days", price: 19.98, competitorPrice: 51.96 }
       ],
       ecoImpact: "Saves ~2.5g plastic compared to physical SIM cards"
     },
@@ -37,13 +37,13 @@ const Destinations = () => {
       name: language === 'ar' ? 'تايلاند' : 'Thailand',
       image: "https://images.unsplash.com/photo-1535139262971-c51845709a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       countries: 1,
-      startingPrice: 5.99,
-      competitorPrice: 35.96, // Doubled
+      startingPrice: 11.98,
+      competitorPrice: 35.96,
       competitorName: "GigSky",
       plans: [
-        { name: "Explorer Basic", data: "2GB", validity: "7 days", price: 5.99, competitorPrice: 35.96 }, // Doubled
-        { name: "Explorer Plus", data: "5GB", validity: "15 days", price: 9.99, competitorPrice: 55.96 }, // Doubled
-        { name: "Explorer Pro", data: "10GB", validity: "30 days", price: 15.99, competitorPrice: 79.96 } // Doubled
+        { name: "Explorer Basic", data: "2GB", validity: "7 days", price: 11.98, competitorPrice: 35.96 },
+        { name: "Explorer Plus", data: "5GB", validity: "15 days", price: 19.98, competitorPrice: 55.96 },
+        { name: "Explorer Pro", data: "10GB", validity: "30 days", price: 31.98, competitorPrice: 79.96 }
       ],
       ecoImpact: "Reduces packaging waste by ~3g"
     },
@@ -51,13 +51,13 @@ const Destinations = () => {
       name: language === 'ar' ? 'الولايات المتحدة' : 'United States',
       image: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       countries: 1,
-      startingPrice: 3.99,
-      competitorPrice: 23.96, // Doubled
+      startingPrice: 7.98,
+      competitorPrice: 23.96,
       competitorName: "Ubigi",
       plans: [
-        { name: "USA Basic", data: "1GB", validity: "7 days", price: 3.99, competitorPrice: 23.96 }, // Doubled
-        { name: "USA Plus", data: "3GB", validity: "15 days", price: 7.99, competitorPrice: 39.96 }, // Doubled
-        { name: "USA Pro", data: "5GB", validity: "30 days", price: 12.99, competitorPrice: 67.96 } // Doubled
+        { name: "USA Basic", data: "1GB", validity: "7 days", price: 7.98, competitorPrice: 23.96 },
+        { name: "USA Plus", data: "3GB", validity: "15 days", price: 15.98, competitorPrice: 39.96 },
+        { name: "USA Pro", data: "5GB", validity: "30 days", price: 25.98, competitorPrice: 67.96 }
       ],
       ecoImpact: "Saves ~2.5g plastic compared to physical SIM cards"
     },
@@ -65,13 +65,13 @@ const Destinations = () => {
       name: language === 'ar' ? 'البرازيل' : 'Brazil',
       image: "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       countries: 1,
-      startingPrice: 4.99,
-      competitorPrice: 27.96, // Doubled
+      startingPrice: 9.98,
+      competitorPrice: 27.96,
       competitorName: "Holafly",
       plans: [
-        { name: "Brazil Basic", data: "1GB", validity: "7 days", price: 4.99, competitorPrice: 27.96 }, // Doubled
-        { name: "Brazil Plus", data: "2GB", validity: "15 days", price: 8.99, competitorPrice: 47.96 }, // Doubled
-        { name: "Brazil Pro", data: "5GB", validity: "30 days", price: 14.99, competitorPrice: 75.96 } // Doubled
+        { name: "Brazil Basic", data: "1GB", validity: "7 days", price: 9.98, competitorPrice: 27.96 },
+        { name: "Brazil Plus", data: "2GB", validity: "15 days", price: 17.98, competitorPrice: 47.96 },
+        { name: "Brazil Pro", data: "5GB", validity: "30 days", price: 29.98, competitorPrice: 75.96 }
       ],
       ecoImpact: "Reduces packaging waste by ~3g"
     }

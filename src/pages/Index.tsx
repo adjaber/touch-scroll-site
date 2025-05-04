@@ -69,21 +69,21 @@ const Index = () => {
                   <tbody>
                     <tr className="border-b">
                       <td className="py-2 px-4">{language === 'ar' ? 'فرنسا (1GB)' : 'France (1GB)'}</td>
-                      <td className="py-2 px-4 font-bold text-green-600">$2.99</td>
+                      <td className="py-2 px-4 font-bold text-green-600">$5.98</td>
                       <td className="py-2 px-4">$19.96</td>
                       <td className="py-2 px-4">$23.96</td>
                       <td className="py-2 px-4">$23.96</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-2 px-4">{language === 'ar' ? 'تايلاند (2GB)' : 'Thailand (2GB)'}</td>
-                      <td className="py-2 px-4 font-bold text-green-600">$5.99</td>
+                      <td className="py-2 px-4 font-bold text-green-600">$11.98</td>
                       <td className="py-2 px-4">$35.96</td>
                       <td className="py-2 px-4">$31.96</td>
                       <td className="py-2 px-4">$39.96</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-2 px-4">{language === 'ar' ? 'الولايات المتحدة (1GB)' : 'USA (1GB)'}</td>
-                      <td className="py-2 px-4 font-bold text-green-600">$3.99</td>
+                      <td className="py-2 px-4 font-bold text-green-600">$7.98</td>
                       <td className="py-2 px-4">$18.00</td>
                       <td className="py-2 px-4">$23.96</td>
                       <td className="py-2 px-4">$27.96</td>
