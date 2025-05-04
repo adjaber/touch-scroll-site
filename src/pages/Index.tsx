@@ -31,6 +31,45 @@ const Index = () => {
     }
   };
 
+  // Format price with thousands separator
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat('ar-DZ').format(Math.round(price));
+  };
+
+  // Base prices multiplied by 2 for ecoESIM and then converted to DZD
+  const prices = {
+    france: {
+      eco: 5.98 * 2 * 240,
+      airalo: 9.00 * 240,
+      gigsky: 11.99 * 240,
+      holafly: 19.00 * 240
+    },
+    thailand: {
+      eco: 11.98 * 2 * 240,
+      airalo: 15.00 * 240,
+      gigsky: 19.99 * 240,
+      holafly: 34.00 * 240
+    },
+    usa: {
+      eco: 7.98 * 2 * 240,
+      airalo: 9.50 * 240,
+      gigsky: 11.99 * 240,
+      holafly: 19.00 * 240
+    },
+    italy: {
+      eco: 6.98 * 2 * 240,
+      airalo: 10.00 * 240,
+      gigsky: 12.99 * 240,
+      holafly: 21.00 * 240
+    },
+    turkey: {
+      eco: 7.98 * 2 * 240,
+      airalo: 11.00 * 240,
+      gigsky: 13.99 * 240,
+      holafly: 23.00 * 240
+    }
+  }
+
   return (
     <div className="min-h-screen flex flex-col" dir={dir}>
       <Navbar />
@@ -45,7 +84,7 @@ const Index = () => {
               <div className="flex items-center justify-center gap-2 mb-4">
                 <Globe className="h-5 w-5 text-green-600" />
                 <h2 className="text-2xl font-bold text-center">
-                  {language === 'ar' ? 'مقارنة الأسعار' : 'Price Comparison'}
+                  {language === 'ar' ? 'مقارنة الأسعار بالدينار الجزائري' : 'Price Comparison in Algerian Dinar'}
                 </h2>
               </div>
               <div className="mb-4 bg-green-50 p-3 rounded-lg">
@@ -77,24 +116,38 @@ const Index = () => {
                   <TableBody>
                     <TableRow className="border-b">
                       <TableCell className="py-2 px-4">{language === 'ar' ? 'فرنسا (1GB)' : 'France (1GB)'}</TableCell>
-                      <TableCell className="py-2 px-4 font-bold text-green-600">$5.98</TableCell>
-                      <TableCell className="py-2 px-4">$9.00</TableCell>
-                      <TableCell className="py-2 px-4">$11.99</TableCell>
-                      <TableCell className="py-2 px-4">$19.00</TableCell>
+                      <TableCell className="py-2 px-4 font-bold text-green-600">{formatPrice(prices.france.eco)} DZD</TableCell>
+                      <TableCell className="py-2 px-4">{formatPrice(prices.france.airalo)} DZD</TableCell>
+                      <TableCell className="py-2 px-4">{formatPrice(prices.france.gigsky)} DZD</TableCell>
+                      <TableCell className="py-2 px-4">{formatPrice(prices.france.holafly)} DZD</TableCell>
                     </TableRow>
                     <TableRow className="border-b">
                       <TableCell className="py-2 px-4">{language === 'ar' ? 'تايلاند (2GB)' : 'Thailand (2GB)'}</TableCell>
-                      <TableCell className="py-2 px-4 font-bold text-green-600">$11.98</TableCell>
-                      <TableCell className="py-2 px-4">$15.00</TableCell>
-                      <TableCell className="py-2 px-4">$19.99</TableCell>
-                      <TableCell className="py-2 px-4">$34.00</TableCell>
+                      <TableCell className="py-2 px-4 font-bold text-green-600">{formatPrice(prices.thailand.eco)} DZD</TableCell>
+                      <TableCell className="py-2 px-4">{formatPrice(prices.thailand.airalo)} DZD</TableCell>
+                      <TableCell className="py-2 px-4">{formatPrice(prices.thailand.gigsky)} DZD</TableCell>
+                      <TableCell className="py-2 px-4">{formatPrice(prices.thailand.holafly)} DZD</TableCell>
                     </TableRow>
                     <TableRow className="border-b">
                       <TableCell className="py-2 px-4">{language === 'ar' ? 'الولايات المتحدة (1GB)' : 'USA (1GB)'}</TableCell>
-                      <TableCell className="py-2 px-4 font-bold text-green-600">$7.98</TableCell>
-                      <TableCell className="py-2 px-4">$9.50</TableCell>
-                      <TableCell className="py-2 px-4">$11.99</TableCell>
-                      <TableCell className="py-2 px-4">$19.00</TableCell>
+                      <TableCell className="py-2 px-4 font-bold text-green-600">{formatPrice(prices.usa.eco)} DZD</TableCell>
+                      <TableCell className="py-2 px-4">{formatPrice(prices.usa.airalo)} DZD</TableCell>
+                      <TableCell className="py-2 px-4">{formatPrice(prices.usa.gigsky)} DZD</TableCell>
+                      <TableCell className="py-2 px-4">{formatPrice(prices.usa.holafly)} DZD</TableCell>
+                    </TableRow>
+                    <TableRow className="border-b">
+                      <TableCell className="py-2 px-4">{language === 'ar' ? 'إيطاليا (1GB)' : 'Italy (1GB)'}</TableCell>
+                      <TableCell className="py-2 px-4 font-bold text-green-600">{formatPrice(prices.italy.eco)} DZD</TableCell>
+                      <TableCell className="py-2 px-4">{formatPrice(prices.italy.airalo)} DZD</TableCell>
+                      <TableCell className="py-2 px-4">{formatPrice(prices.italy.gigsky)} DZD</TableCell>
+                      <TableCell className="py-2 px-4">{formatPrice(prices.italy.holafly)} DZD</TableCell>
+                    </TableRow>
+                    <TableRow className="border-b">
+                      <TableCell className="py-2 px-4">{language === 'ar' ? 'تركيا (1GB)' : 'Turkey (1GB)'}</TableCell>
+                      <TableCell className="py-2 px-4 font-bold text-green-600">{formatPrice(prices.turkey.eco)} DZD</TableCell>
+                      <TableCell className="py-2 px-4">{formatPrice(prices.turkey.airalo)} DZD</TableCell>
+                      <TableCell className="py-2 px-4">{formatPrice(prices.turkey.gigsky)} DZD</TableCell>
+                      <TableCell className="py-2 px-4">{formatPrice(prices.turkey.holafly)} DZD</TableCell>
                     </TableRow>
                   </TableBody>
                 </Table>

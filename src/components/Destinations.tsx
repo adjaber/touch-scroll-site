@@ -21,57 +21,85 @@ const Destinations = () => {
   const destinations = [
     {
       name: language === 'ar' ? 'فرنسا' : 'France',
-      image: "https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=70",
       countries: 1,
-      startingPrice: 5.98,
-      competitorPrice: 9.00, 
+      startingPrice: 5.98 * 2 * 240, // Converted to DZD
+      competitorPrice: 9.00 * 240,
       competitorName: "Airalo",
       plans: [
-        { name: "Traveler Basic", data: "1GB", validity: "7 days", price: 5.98, competitorPrice: 9.00 },
-        { name: "Traveler Plus", data: "3GB", validity: "15 days", price: 11.98, competitorPrice: 15.00 },
-        { name: "Traveler Pro", data: "5GB", validity: "30 days", price: 19.98, competitorPrice: 23.00 }
+        { name: "Traveler Basic", data: "1GB", validity: "7 days", price: 5.98 * 2 * 240, competitorPrice: 9.00 * 240 },
+        { name: "Traveler Plus", data: "3GB", validity: "15 days", price: 11.98 * 2 * 240, competitorPrice: 15.00 * 240 },
+        { name: "Traveler Pro", data: "5GB", validity: "30 days", price: 19.98 * 2 * 240, competitorPrice: 23.00 * 240 }
       ],
       ecoImpact: "Saves ~2.5g plastic compared to physical SIM cards"
     },
     {
       name: language === 'ar' ? 'تايلاند' : 'Thailand',
-      image: "https://images.unsplash.com/photo-1535139262971-c51845709a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      image: "https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=70",
       countries: 1,
-      startingPrice: 11.98,
-      competitorPrice: 15.00,
+      startingPrice: 11.98 * 2 * 240, // Converted to DZD
+      competitorPrice: 15.00 * 240,
       competitorName: "Airalo",
       plans: [
-        { name: "Explorer Basic", data: "2GB", validity: "7 days", price: 11.98, competitorPrice: 15.00 },
-        { name: "Explorer Plus", data: "5GB", validity: "15 days", price: 19.98, competitorPrice: 25.00 },
-        { name: "Explorer Pro", data: "10GB", validity: "30 days", price: 31.98, competitorPrice: 39.00 }
+        { name: "Explorer Basic", data: "2GB", validity: "7 days", price: 11.98 * 2 * 240, competitorPrice: 15.00 * 240 },
+        { name: "Explorer Plus", data: "5GB", validity: "15 days", price: 19.98 * 2 * 240, competitorPrice: 25.00 * 240 },
+        { name: "Explorer Pro", data: "10GB", validity: "30 days", price: 31.98 * 2 * 240, competitorPrice: 39.00 * 240 }
       ],
       ecoImpact: "Reduces packaging waste by ~3g"
     },
     {
-      name: language === 'ar' ? 'الولايات المتحدة' : 'United States',
-      image: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      name: language === 'ar' ? 'إيطاليا' : 'Italy',
+      image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=70",
       countries: 1,
-      startingPrice: 7.98,
-      competitorPrice: 9.50,
+      startingPrice: 6.98 * 2 * 240, // Converted to DZD
+      competitorPrice: 10.50 * 240,
       competitorName: "Airalo",
       plans: [
-        { name: "USA Basic", data: "1GB", validity: "7 days", price: 7.98, competitorPrice: 9.50 },
-        { name: "USA Plus", data: "3GB", validity: "15 days", price: 15.98, competitorPrice: 19.00 },
-        { name: "USA Pro", data: "5GB", validity: "30 days", price: 25.98, competitorPrice: 32.00 }
+        { name: "Italy Basic", data: "1GB", validity: "7 days", price: 6.98 * 2 * 240, competitorPrice: 10.50 * 240 },
+        { name: "Italy Plus", data: "3GB", validity: "15 days", price: 14.98 * 2 * 240, competitorPrice: 19.00 * 240 },
+        { name: "Italy Pro", data: "5GB", validity: "30 days", price: 22.98 * 2 * 240, competitorPrice: 29.00 * 240 }
       ],
       ecoImpact: "Saves ~2.5g plastic compared to physical SIM cards"
     },
     {
-      name: language === 'ar' ? 'البرازيل' : 'Brazil',
-      image: "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      name: language === 'ar' ? 'اليابان' : 'Japan',
+      image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=70",
       countries: 1,
-      startingPrice: 9.98,
-      competitorPrice: 14.00,
+      startingPrice: 14.98 * 2 * 240, // Converted to DZD
+      competitorPrice: 19.00 * 240,
+      competitorName: "GigSky",
+      plans: [
+        { name: "Japan Basic", data: "1GB", validity: "7 days", price: 14.98 * 2 * 240, competitorPrice: 19.00 * 240 },
+        { name: "Japan Plus", data: "3GB", validity: "15 days", price: 23.98 * 2 * 240, competitorPrice: 29.00 * 240 },
+        { name: "Japan Pro", data: "5GB", validity: "30 days", price: 34.98 * 2 * 240, competitorPrice: 45.00 * 240 }
+      ],
+      ecoImpact: "Reduces packaging waste by ~3g"
+    },
+    {
+      name: language === 'ar' ? 'الإمارات' : 'UAE',
+      image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=70",
+      countries: 1,
+      startingPrice: 8.98 * 2 * 240, // Converted to DZD
+      competitorPrice: 13.00 * 240,
       competitorName: "Airalo",
       plans: [
-        { name: "Brazil Basic", data: "1GB", validity: "7 days", price: 9.98, competitorPrice: 14.00 },
-        { name: "Brazil Plus", data: "2GB", validity: "15 days", price: 17.98, competitorPrice: 22.00 },
-        { name: "Brazil Pro", data: "5GB", validity: "30 days", price: 29.98, competitorPrice: 38.00 }
+        { name: "UAE Basic", data: "1GB", validity: "7 days", price: 8.98 * 2 * 240, competitorPrice: 13.00 * 240 },
+        { name: "UAE Plus", data: "2GB", validity: "15 days", price: 15.98 * 2 * 240, competitorPrice: 20.00 * 240 },
+        { name: "UAE Pro", data: "5GB", validity: "30 days", price: 29.98 * 2 * 240, competitorPrice: 37.00 * 240 }
+      ],
+      ecoImpact: "Saves ~2.5g plastic compared to physical SIM cards"
+    },
+    {
+      name: language === 'ar' ? 'تركيا' : 'Turkey',
+      image: "https://images.unsplash.com/photo-1527838832700-5059252407fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=70",
+      countries: 1,
+      startingPrice: 7.98 * 2 * 240, // Converted to DZD
+      competitorPrice: 11.00 * 240,
+      competitorName: "Holafly",
+      plans: [
+        { name: "Turkey Basic", data: "1GB", validity: "7 days", price: 7.98 * 2 * 240, competitorPrice: 11.00 * 240 },
+        { name: "Turkey Plus", data: "3GB", validity: "15 days", price: 16.98 * 2 * 240, competitorPrice: 19.00 * 240 },
+        { name: "Turkey Pro", data: "5GB", validity: "30 days", price: 25.98 * 2 * 240, competitorPrice: 30.00 * 240 }
       ],
       ecoImpact: "Reduces packaging waste by ~3g"
     }
@@ -83,6 +111,11 @@ const Destinations = () => {
       // @ts-ignore
       window.launchChatbot();
     }
+  };
+
+  // Format price with thousands separator
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat('ar-DZ').format(Math.round(price));
   };
 
   return (
@@ -110,9 +143,14 @@ const Destinations = () => {
               ? 'بطاقات eSIM صديقة للبيئة - لا بلاستيك، لا نفايات، الحل الأخضر للسفر'
               : 'Eco-friendly eSIM cards - No plastic, no waste, the green travel solution'}
           </div>
+          <div className="mt-3 text-sm text-gray-600">
+            {language === 'ar' 
+              ? 'الأسعار معروضة بالدينار الجزائري'
+              : 'Prices shown in Algerian Dinar (DZD)'}
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {destinations.map((destination, index) => (
             <Card key={index} className="overflow-hidden card-hover border-green-200 shadow-sm hover:shadow-green-100">
               <div className="relative h-48">
@@ -136,8 +174,8 @@ const Destinations = () => {
                 <div className="flex justify-between items-center mb-3">
                   <span className="text-gray-600 text-sm">1GB / 7 days</span>
                   <div className="flex flex-col items-end">
-                    <span className="text-green-600 font-bold">${destination.startingPrice}</span>
-                    <span className="text-gray-400 text-xs line-through">${destination.competitorPrice} ({destination.competitorName})</span>
+                    <span className="text-green-600 font-bold">{formatPrice(destination.startingPrice)} DZD</span>
+                    <span className="text-gray-400 text-xs line-through">{formatPrice(destination.competitorPrice)} DZD ({destination.competitorName})</span>
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -219,8 +257,8 @@ const Destinations = () => {
                     <div className="flex justify-between items-center mb-2">
                       <h4 className="font-medium text-lg">{plan.name}</h4>
                       <div className="flex flex-col items-end">
-                        <span className="text-green-600 font-bold">${plan.price}</span>
-                        <span className="text-xs text-gray-400 line-through">${plan.competitorPrice} ({destinations[selectedDestination].competitorName})</span>
+                        <span className="text-green-600 font-bold">{formatPrice(plan.price)} DZD</span>
+                        <span className="text-xs text-gray-400 line-through">{formatPrice(plan.competitorPrice)} DZD ({destinations[selectedDestination].competitorName})</span>
                       </div>
                     </div>
                     <div className="grid grid-cols-2 gap-2 text-sm text-gray-600">
@@ -240,8 +278,8 @@ const Destinations = () => {
                     <div className="mt-2 text-center">
                       <p className="text-xs text-green-600 font-medium">
                         {language === 'ar' 
-                          ? 'توفير أكثر من 85% مقارنة مع المنافسين!' 
-                          : 'Save over 85% compared to competitors!'}
+                          ? 'توفير أكثر من 40% مقارنة مع المنافسين!' 
+                          : 'Save over 40% compared to competitors!'}
                       </p>
                     </div>
                   </div>
