@@ -30,9 +30,9 @@ const Index = () => {
       <HowItWorks />
       <Benefits />
       <Destinations />
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-green-50">
         <div className="container">
-          <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+          <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-md overflow-hidden border border-green-100">
             <div className="p-6">
               <div className="flex items-center justify-center gap-2 mb-4">
                 <Globe className="h-5 w-5 text-green-600" />
@@ -53,7 +53,7 @@ const Index = () => {
               <div className="overflow-x-auto" dir={dir}>
                 <table className={`w-full ${dir === 'rtl' ? 'text-right' : 'text-left'}`}>
                   <thead>
-                    <tr className="bg-gray-100">
+                    <tr className="bg-green-100">
                       <th className="py-2 px-4">{language === 'ar' ? 'الوجهة' : 'Destination'}</th>
                       <th className="py-2 px-4">
                         <div className="flex items-center gap-1">
@@ -70,23 +70,23 @@ const Index = () => {
                     <tr className="border-b">
                       <td className="py-2 px-4">{language === 'ar' ? 'فرنسا (1GB)' : 'France (1GB)'}</td>
                       <td className="py-2 px-4 font-bold text-green-600">$2.99</td>
-                      <td className="py-2 px-4">$9.98</td>
-                      <td className="py-2 px-4">$11.98</td>
-                      <td className="py-2 px-4">$11.98</td>
+                      <td className="py-2 px-4">$19.96</td>
+                      <td className="py-2 px-4">$23.96</td>
+                      <td className="py-2 px-4">$23.96</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-2 px-4">{language === 'ar' ? 'تايلاند (2GB)' : 'Thailand (2GB)'}</td>
                       <td className="py-2 px-4 font-bold text-green-600">$5.99</td>
-                      <td className="py-2 px-4">$17.98</td>
-                      <td className="py-2 px-4">$15.98</td>
-                      <td className="py-2 px-4">$19.98</td>
+                      <td className="py-2 px-4">$35.96</td>
+                      <td className="py-2 px-4">$31.96</td>
+                      <td className="py-2 px-4">$39.96</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-2 px-4">{language === 'ar' ? 'الولايات المتحدة (1GB)' : 'USA (1GB)'}</td>
                       <td className="py-2 px-4 font-bold text-green-600">$3.99</td>
-                      <td className="py-2 px-4">$9.00</td>
-                      <td className="py-2 px-4">$11.98</td>
-                      <td className="py-2 px-4">$13.98</td>
+                      <td className="py-2 px-4">$18.00</td>
+                      <td className="py-2 px-4">$23.96</td>
+                      <td className="py-2 px-4">$27.96</td>
                     </tr>
                   </tbody>
                 </table>
@@ -101,8 +101,8 @@ const Index = () => {
                     </h3>
                     <p className="text-sm text-green-700 mt-1">
                       {language === 'ar' 
-                        ? 'تحدث مع مساعدنا عبر الدردشة للشراء فورًا والحصول على عروض وخصومات خاصة غير متوفرة عبر موقعنا الإلكتروني. وفر حتى 70٪!'
-                        : 'Chat with our assistant to buy instantly and get special deals and discounts not available through our website. Save up to 70%!'}
+                        ? 'تحدث مع مساعدنا عبر الدردشة للشراء فورًا والحصول على عروض وخصومات خاصة غير متوفرة عبر موقعنا الإلكتروني. وفر حتى 85٪!'
+                        : 'Chat with our assistant to buy instantly and get special deals and discounts not available through our website. Save up to 85%!'}
                     </p>
                     <p className="text-xs text-green-700 mt-1">
                       {language === 'ar'

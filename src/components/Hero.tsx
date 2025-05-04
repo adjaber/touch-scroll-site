@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Globe } from "lucide-react";
+import { Globe, Leaf, Recycle } from "lucide-react";
 import { useLanguage } from '@/context/LanguageContext';
 import { translations } from '@/translations';
 
@@ -22,24 +22,30 @@ const Hero = () => {
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{ 
-          backgroundImage: "url('https://images.unsplash.com/photo-1469041797191-50ace28483c3?ixlib=rb-1.2.1&auto=format&fit=crop')",
+          backgroundImage: "url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-1.2.1&auto=format&fit=crop')",
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-green-900/80 to-green-700/50"></div>
       </div>
 
       <div className="container relative z-10 mx-auto px-4 md:px-6">
         <div className="max-w-2xl text-white">
+          <div className="inline-block bg-green-600/30 backdrop-blur-sm rounded-lg px-4 py-2 mb-4 border border-green-400/30">
+            <div className="flex items-center gap-2">
+              <Leaf className="h-5 w-5 text-green-300" />
+              <span className="text-green-100">Eco-Friendly Travel Connectivity</span>
+            </div>
+          </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-            {language === 'ar' ? 'ابق متصلاً حول العالم مع تقنية eSIM' : 'Stay Connected Worldwide with eSIM Technology'}
+            {language === 'ar' ? 'ابق متصلاً حول العالم مع تقنية eSIM الخضراء' : 'Stay Connected Worldwide with Green eSIM Technology'}
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 mb-8">
-            {language === 'ar' ? 'اتصال بيانات فوري في أكثر من 190 دولة. لا حاجة لبطاقة SIM فعلية.' : 'Instant data connectivity in over 190+ countries. No physical SIM card needed.'}
+            {language === 'ar' ? 'اتصال بيانات فوري في أكثر من 190 دولة. لا حاجة لبطاقة SIM فعلية. صديق للبيئة 100٪.' : 'Instant data connectivity in over 190+ countries. No physical SIM card needed. 100% eco-friendly.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
               variant="outline" 
-              className="bg-transparent border border-white text-white hover:bg-white hover:text-black px-8 py-6 rounded-full text-lg"
+              className="bg-transparent border border-white text-white hover:bg-white hover:text-green-800 px-8 py-6 rounded-full text-lg"
               onClick={() => scrollToSection('how-it-works')}
             >
               {language === 'ar' ? 'تعلم كيف يعمل' : 'Learn How It Works'}
@@ -54,6 +60,15 @@ const Hero = () => {
             </div>
             <p className="ml-4 text-gray-200">
               <span className="font-bold">2,000+</span> {language === 'ar' ? 'مسافر متصل هذا الشهر' : 'travelers connected this month'}
+            </p>
+          </div>
+          
+          <div className="mt-6 flex items-center gap-3 bg-white/10 backdrop-blur-sm p-3 rounded-lg">
+            <Recycle className="h-6 w-6 text-green-300 flex-shrink-0" />
+            <p className="text-sm text-green-100">
+              {language === 'ar' 
+                ? 'لقد ساعدنا في توفير أكثر من 500 كجم من نفايات البلاستيك هذا العام من خلال eSIMs الخاصة بنا'
+                : 'We\'ve helped save over 500kg of plastic waste this year through our eSIMs'}
             </p>
           </div>
         </div>
