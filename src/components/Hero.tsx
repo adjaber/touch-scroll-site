@@ -22,7 +22,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{ 
-          backgroundImage: "url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-1.2.1&auto=format&fit=crop')",
+          backgroundImage: "url('https://images.unsplash.com/photo-1469041797191-50ace28483c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80')",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-green-900/80 to-green-700/50"></div>
@@ -37,7 +37,7 @@ const Hero = () => {
             </div>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-            {language === 'ar' ? 'ابق متصلاً حول العالم مع تقنية eSIM الخضراء' : 'Stay Connected Worldwide with Green eSIM Technology'}
+            {language === 'ar' ? 'ابق متصلاً حول العالم مع تقنية ecoESIM' : 'Stay Connected Worldwide with ecoESIM Technology'}
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 mb-8">
             {language === 'ar' ? 'اتصال بيانات فوري في أكثر من 190 دولة. لا حاجة لبطاقة SIM فعلية. صديق للبيئة 100٪.' : 'Instant data connectivity in over 190+ countries. No physical SIM card needed. 100% eco-friendly.'}
