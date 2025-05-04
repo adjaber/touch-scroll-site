@@ -11,6 +11,14 @@ import ChatbotWrapper from '@/components/ChatbotWrapper';
 import { useLanguage } from '@/context/LanguageContext';
 import { MessageSquare, Leaf, Globe, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow
+} from "@/components/ui/table";
 
 const Index = () => {
   const { language, dir } = useLanguage();
@@ -51,45 +59,45 @@ const Index = () => {
                 </div>
               </div>
               <div className="overflow-x-auto" dir={dir}>
-                <table className={`w-full ${dir === 'rtl' ? 'text-right' : 'text-left'}`}>
-                  <thead>
-                    <tr className="bg-green-100">
-                      <th className="py-2 px-4">{language === 'ar' ? 'الوجهة' : 'Destination'}</th>
-                      <th className="py-2 px-4">
+                <Table className={dir === 'rtl' ? 'text-right' : 'text-left'}>
+                  <TableHeader>
+                    <TableRow className="bg-green-100">
+                      <TableHead className="py-2 px-4">{language === 'ar' ? 'الوجهة' : 'Destination'}</TableHead>
+                      <TableHead className="py-2 px-4">
                         <div className="flex items-center gap-1">
                           <Leaf className="h-4 w-4 text-green-600" />
                           ecoESIM
                         </div>
-                      </th>
-                      <th className="py-2 px-4">Airalo</th>
-                      <th className="py-2 px-4">GigSky</th>
-                      <th className="py-2 px-4">Holafly</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b">
-                      <td className="py-2 px-4">{language === 'ar' ? 'فرنسا (1GB)' : 'France (1GB)'}</td>
-                      <td className="py-2 px-4 font-bold text-green-600">$5.98</td>
-                      <td className="py-2 px-4">$19.96</td>
-                      <td className="py-2 px-4">$23.96</td>
-                      <td className="py-2 px-4">$23.96</td>
-                    </tr>
-                    <tr className="border-b">
-                      <td className="py-2 px-4">{language === 'ar' ? 'تايلاند (2GB)' : 'Thailand (2GB)'}</td>
-                      <td className="py-2 px-4 font-bold text-green-600">$11.98</td>
-                      <td className="py-2 px-4">$35.96</td>
-                      <td className="py-2 px-4">$31.96</td>
-                      <td className="py-2 px-4">$39.96</td>
-                    </tr>
-                    <tr className="border-b">
-                      <td className="py-2 px-4">{language === 'ar' ? 'الولايات المتحدة (1GB)' : 'USA (1GB)'}</td>
-                      <td className="py-2 px-4 font-bold text-green-600">$7.98</td>
-                      <td className="py-2 px-4">$18.00</td>
-                      <td className="py-2 px-4">$23.96</td>
-                      <td className="py-2 px-4">$27.96</td>
-                    </tr>
-                  </tbody>
-                </table>
+                      </TableHead>
+                      <TableHead className="py-2 px-4">Airalo</TableHead>
+                      <TableHead className="py-2 px-4">GigSky</TableHead>
+                      <TableHead className="py-2 px-4">Holafly</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    <TableRow className="border-b">
+                      <TableCell className="py-2 px-4">{language === 'ar' ? 'فرنسا (1GB)' : 'France (1GB)'}</TableCell>
+                      <TableCell className="py-2 px-4 font-bold text-green-600">$5.98</TableCell>
+                      <TableCell className="py-2 px-4">$9.00</TableCell>
+                      <TableCell className="py-2 px-4">$11.99</TableCell>
+                      <TableCell className="py-2 px-4">$19.00</TableCell>
+                    </TableRow>
+                    <TableRow className="border-b">
+                      <TableCell className="py-2 px-4">{language === 'ar' ? 'تايلاند (2GB)' : 'Thailand (2GB)'}</TableCell>
+                      <TableCell className="py-2 px-4 font-bold text-green-600">$11.98</TableCell>
+                      <TableCell className="py-2 px-4">$15.00</TableCell>
+                      <TableCell className="py-2 px-4">$19.99</TableCell>
+                      <TableCell className="py-2 px-4">$34.00</TableCell>
+                    </TableRow>
+                    <TableRow className="border-b">
+                      <TableCell className="py-2 px-4">{language === 'ar' ? 'الولايات المتحدة (1GB)' : 'USA (1GB)'}</TableCell>
+                      <TableCell className="py-2 px-4 font-bold text-green-600">$7.98</TableCell>
+                      <TableCell className="py-2 px-4">$9.50</TableCell>
+                      <TableCell className="py-2 px-4">$11.99</TableCell>
+                      <TableCell className="py-2 px-4">$19.00</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
               </div>
               
               <div className="mt-6 bg-green-50 p-4 rounded-lg" dir={dir}>
@@ -101,8 +109,8 @@ const Index = () => {
                     </h3>
                     <p className="text-sm text-green-700 mt-1">
                       {language === 'ar' 
-                        ? 'تحدث مع مساعدنا عبر الدردشة للشراء فورًا والحصول على عروض وخصومات خاصة غير متوفرة عبر موقعنا الإلكتروني. وفر حتى 85٪!'
-                        : 'Chat with our assistant to buy instantly and get special deals and discounts not available through our website. Save up to 85%!'}
+                        ? 'تحدث مع مساعدنا عبر الدردشة للشراء فورًا والحصول على عروض وخصومات خاصة غير متوفرة عبر موقعنا الإلكتروني. وفر حتى 40٪!'
+                        : 'Chat with our assistant to buy instantly and get special deals and discounts not available through our website. Save up to 40%!'}
                     </p>
                     <p className="text-xs text-green-700 mt-1">
                       {language === 'ar'
