@@ -36,7 +36,7 @@ const Index = () => {
     return new Intl.NumberFormat('ar-DZ').format(Math.round(price));
   };
 
-  // Recalculated prices from Google Sheet * 480 for ecoESIM, converted to DZD for competitors
+  // Recalculated prices from Google Sheet * 480 for ecoESIM and competitors, converted to DZD
   const prices = {
     france: {
       eco: 5.99 * 480,

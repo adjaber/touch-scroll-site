@@ -19,12 +19,14 @@ const Hero = () => {
   return (
     <section id="home" className="relative min-h-[90vh] flex items-center">
       {/* Background image with overlay */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{ 
-          backgroundImage: `url('https://images.unsplash.com/photo-1517736996709-4eec8fef476d?auto=format&fit=crop&w=2000&q=80')`,
-        }}
-      >
+      <div className="absolute inset-0 z-0">
+        <div className="grid grid-cols-2 grid-rows-2 h-full w-full">
+          <div className="bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')" }}></div>
+          <div className="bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')" }}></div>
+          <div className="bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')" }}></div>
+          <div className="bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')" }}></div>
+        </div>
+        {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 to-purple-700/50"></div>
       </div>
 
