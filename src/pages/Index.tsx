@@ -36,36 +36,36 @@ const Index = () => {
     return new Intl.NumberFormat('ar-DZ').format(Math.round(price));
   };
 
-  // Base prices multiplied by 2 for ecoESIM and then converted to DZD
+  // Recalculated prices from Google Sheet * 2 * 240 for ecoESIM, converted to DZD for competitors
   const prices = {
     france: {
-      eco: 5.98 * 2 * 240,
-      airalo: 9.00 * 240,
-      gigsky: 11.99 * 240,
-      holafly: 19.00 * 240
+      eco: 5.99 * 2 * 240,
+      airalo: 9.99 * 240,
+      gigsky: 12.99 * 240,
+      holafly: 24.00 * 240
     },
     thailand: {
-      eco: 11.98 * 2 * 240,
-      airalo: 15.00 * 240,
+      eco: 11.99 * 2 * 240,
+      airalo: 15.99 * 240,
       gigsky: 19.99 * 240,
       holafly: 34.00 * 240
     },
     usa: {
-      eco: 7.98 * 2 * 240,
-      airalo: 9.50 * 240,
-      gigsky: 11.99 * 240,
-      holafly: 19.00 * 240
+      eco: 7.99 * 2 * 240,
+      airalo: 9.99 * 240,
+      gigsky: 14.99 * 240,
+      holafly: 29.00 * 240
     },
     italy: {
-      eco: 6.98 * 2 * 240,
-      airalo: 10.00 * 240,
-      gigsky: 12.99 * 240,
-      holafly: 21.00 * 240
+      eco: 6.99 * 2 * 240,
+      airalo: 10.99 * 240,
+      gigsky: 13.99 * 240,
+      holafly: 24.00 * 240
     },
     turkey: {
-      eco: 7.98 * 2 * 240,
-      airalo: 11.00 * 240,
-      gigsky: 13.99 * 240,
+      eco: 7.99 * 2 * 240,
+      airalo: 11.99 * 240,
+      gigsky: 15.99 * 240,
       holafly: 23.00 * 240
     }
   }
@@ -77,20 +77,20 @@ const Index = () => {
       <HowItWorks />
       <Benefits />
       <Destinations />
-      <section className="py-16 bg-green-50">
+      <section className="py-16 bg-gray-50">
         <div className="container">
-          <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-md overflow-hidden border border-green-100">
+          <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-md overflow-hidden border border-purple-100">
             <div className="p-6">
               <div className="flex items-center justify-center gap-2 mb-4">
-                <Globe className="h-5 w-5 text-green-600" />
+                <Globe className="h-5 w-5 text-purple-600" />
                 <h2 className="text-2xl font-bold text-center">
-                  {language === 'ar' ? 'مقارنة الأسعار بالدينار الجزائري' : 'Price Comparison in Algerian Dinar'}
+                  {language === 'ar' ? 'مقارنة مع المنافسين بالدينار الجزائري' : 'Competitor Comparison in Algerian Dinar'}
                 </h2>
               </div>
-              <div className="mb-4 bg-green-50 p-3 rounded-lg">
+              <div className="mb-4 bg-purple-50 p-3 rounded-lg">
                 <div className="flex items-center gap-2">
-                  <Leaf className="h-5 w-5 text-green-600 flex-shrink-0" />
-                  <p className="text-sm text-green-800">
+                  <Leaf className="h-5 w-5 text-purple-600 flex-shrink-0" />
+                  <p className="text-sm text-purple-800">
                     {language === 'ar' 
                       ? 'بطاقات eSIM من ecoESIM تقلل النفايات البلاستيكية بنسبة 100٪ مقارنة بالبطاقات التقليدية'
                       : 'ecoESIM eSIMs reduce plastic waste by 100% compared to traditional SIM cards'}
@@ -100,11 +100,11 @@ const Index = () => {
               <div className="overflow-x-auto" dir={dir}>
                 <Table className={dir === 'rtl' ? 'text-right' : 'text-left'}>
                   <TableHeader>
-                    <TableRow className="bg-green-100">
+                    <TableRow className="bg-purple-100">
                       <TableHead className="py-2 px-4">{language === 'ar' ? 'الوجهة' : 'Destination'}</TableHead>
                       <TableHead className="py-2 px-4">
                         <div className="flex items-center gap-1">
-                          <Leaf className="h-4 w-4 text-green-600" />
+                          <Leaf className="h-4 w-4 text-purple-600" />
                           ecoESIM
                         </div>
                       </TableHead>
@@ -116,35 +116,35 @@ const Index = () => {
                   <TableBody>
                     <TableRow className="border-b">
                       <TableCell className="py-2 px-4">{language === 'ar' ? 'فرنسا (1GB)' : 'France (1GB)'}</TableCell>
-                      <TableCell className="py-2 px-4 font-bold text-green-600">{formatPrice(prices.france.eco)} DZD</TableCell>
+                      <TableCell className="py-2 px-4 font-bold text-purple-600">{formatPrice(prices.france.eco)} DZD</TableCell>
                       <TableCell className="py-2 px-4">{formatPrice(prices.france.airalo)} DZD</TableCell>
                       <TableCell className="py-2 px-4">{formatPrice(prices.france.gigsky)} DZD</TableCell>
                       <TableCell className="py-2 px-4">{formatPrice(prices.france.holafly)} DZD</TableCell>
                     </TableRow>
                     <TableRow className="border-b">
                       <TableCell className="py-2 px-4">{language === 'ar' ? 'تايلاند (2GB)' : 'Thailand (2GB)'}</TableCell>
-                      <TableCell className="py-2 px-4 font-bold text-green-600">{formatPrice(prices.thailand.eco)} DZD</TableCell>
+                      <TableCell className="py-2 px-4 font-bold text-purple-600">{formatPrice(prices.thailand.eco)} DZD</TableCell>
                       <TableCell className="py-2 px-4">{formatPrice(prices.thailand.airalo)} DZD</TableCell>
                       <TableCell className="py-2 px-4">{formatPrice(prices.thailand.gigsky)} DZD</TableCell>
                       <TableCell className="py-2 px-4">{formatPrice(prices.thailand.holafly)} DZD</TableCell>
                     </TableRow>
                     <TableRow className="border-b">
                       <TableCell className="py-2 px-4">{language === 'ar' ? 'الولايات المتحدة (1GB)' : 'USA (1GB)'}</TableCell>
-                      <TableCell className="py-2 px-4 font-bold text-green-600">{formatPrice(prices.usa.eco)} DZD</TableCell>
+                      <TableCell className="py-2 px-4 font-bold text-purple-600">{formatPrice(prices.usa.eco)} DZD</TableCell>
                       <TableCell className="py-2 px-4">{formatPrice(prices.usa.airalo)} DZD</TableCell>
                       <TableCell className="py-2 px-4">{formatPrice(prices.usa.gigsky)} DZD</TableCell>
                       <TableCell className="py-2 px-4">{formatPrice(prices.usa.holafly)} DZD</TableCell>
                     </TableRow>
                     <TableRow className="border-b">
                       <TableCell className="py-2 px-4">{language === 'ar' ? 'إيطاليا (1GB)' : 'Italy (1GB)'}</TableCell>
-                      <TableCell className="py-2 px-4 font-bold text-green-600">{formatPrice(prices.italy.eco)} DZD</TableCell>
+                      <TableCell className="py-2 px-4 font-bold text-purple-600">{formatPrice(prices.italy.eco)} DZD</TableCell>
                       <TableCell className="py-2 px-4">{formatPrice(prices.italy.airalo)} DZD</TableCell>
                       <TableCell className="py-2 px-4">{formatPrice(prices.italy.gigsky)} DZD</TableCell>
                       <TableCell className="py-2 px-4">{formatPrice(prices.italy.holafly)} DZD</TableCell>
                     </TableRow>
                     <TableRow className="border-b">
                       <TableCell className="py-2 px-4">{language === 'ar' ? 'تركيا (1GB)' : 'Turkey (1GB)'}</TableCell>
-                      <TableCell className="py-2 px-4 font-bold text-green-600">{formatPrice(prices.turkey.eco)} DZD</TableCell>
+                      <TableCell className="py-2 px-4 font-bold text-purple-600">{formatPrice(prices.turkey.eco)} DZD</TableCell>
                       <TableCell className="py-2 px-4">{formatPrice(prices.turkey.airalo)} DZD</TableCell>
                       <TableCell className="py-2 px-4">{formatPrice(prices.turkey.gigsky)} DZD</TableCell>
                       <TableCell className="py-2 px-4">{formatPrice(prices.turkey.holafly)} DZD</TableCell>
@@ -153,19 +153,19 @@ const Index = () => {
                 </Table>
               </div>
               
-              <div className="mt-6 bg-green-50 p-4 rounded-lg" dir={dir}>
+              <div className="mt-6 bg-purple-50 p-4 rounded-lg" dir={dir}>
                 <div className={`flex items-start gap-3 ${dir === 'rtl' ? 'flex-row-reverse text-right' : 'flex-row text-left'}`}>
-                  <MessageSquare className="h-5 w-5 text-green-600 mt-1" />
+                  <MessageSquare className="h-5 w-5 text-purple-600 mt-1" />
                   <div>
-                    <h3 className="font-medium text-green-800">
+                    <h3 className="font-medium text-purple-800">
                       {language === 'ar' ? 'اشترِ eSIM بأسعار حصرية عبر المحادثة!' : 'Buy eSIMs at Exclusive Chat-Only Prices!'}
                     </h3>
-                    <p className="text-sm text-green-700 mt-1">
+                    <p className="text-sm text-purple-700 mt-1">
                       {language === 'ar' 
                         ? 'تحدث مع مساعدنا عبر الدردشة للشراء فورًا والحصول على عروض وخصومات خاصة غير متوفرة عبر موقعنا الإلكتروني. وفر حتى 40٪!'
                         : 'Chat with our assistant to buy instantly and get special deals and discounts not available through our website. Save up to 40%!'}
                     </p>
-                    <p className="text-xs text-green-700 mt-1">
+                    <p className="text-xs text-purple-700 mt-1">
                       {language === 'ar'
                         ? 'كل عملية شراء من خلال المحادثة تساهم في مبادرات الاستدامة البيئية الخاصة بنا'
                         : 'Every purchase through chat contributes to our environmental sustainability initiatives'}
@@ -173,7 +173,7 @@ const Index = () => {
                     <Button 
                       onClick={launchChatbot}
                       size="sm" 
-                      className={`mt-2 bg-green-600 hover:bg-green-700 ${dir === 'rtl' ? 'flex flex-row-reverse' : ''}`}
+                      className={`mt-2 bg-purple-600 hover:bg-purple-700 ${dir === 'rtl' ? 'flex flex-row-reverse' : ''}`}
                     >
                       <MessageSquare className={`h-4 w-4 ${dir === 'rtl' ? 'mr-0 ml-2' : 'ml-0 mr-2'}`} />
                       {language === 'ar' ? 'اشترِ eSIM الآن' : 'Buy Your eSIM Now'}

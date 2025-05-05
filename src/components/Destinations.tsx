@@ -23,13 +23,12 @@ const Destinations = () => {
       name: language === 'ar' ? 'فرنسا' : 'France',
       image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=70",
       countries: 1,
-      startingPrice: 5.98 * 2 * 240, // Converted to DZD
-      competitorPrice: 9.00 * 240,
       competitorName: "Airalo",
+      savingsPercentage: "40%",
       plans: [
-        { name: "Traveler Basic", data: "1GB", validity: "7 days", price: 5.98 * 2 * 240, competitorPrice: 9.00 * 240 },
-        { name: "Traveler Plus", data: "3GB", validity: "15 days", price: 11.98 * 2 * 240, competitorPrice: 15.00 * 240 },
-        { name: "Traveler Pro", data: "5GB", validity: "30 days", price: 19.98 * 2 * 240, competitorPrice: 23.00 * 240 }
+        { name: "Traveler Basic", data: "1GB", validity: "7 days", savings: "40%", competitorName: "Airalo" },
+        { name: "Traveler Plus", data: "3GB", validity: "15 days", savings: "35%", competitorName: "Airalo" },
+        { name: "Traveler Pro", data: "5GB", validity: "30 days", savings: "30%", competitorName: "Airalo" }
       ],
       ecoImpact: "Saves ~2.5g plastic compared to physical SIM cards"
     },
@@ -37,13 +36,12 @@ const Destinations = () => {
       name: language === 'ar' ? 'تايلاند' : 'Thailand',
       image: "https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=70",
       countries: 1,
-      startingPrice: 11.98 * 2 * 240, // Converted to DZD
-      competitorPrice: 15.00 * 240,
       competitorName: "Airalo",
+      savingsPercentage: "40%",
       plans: [
-        { name: "Explorer Basic", data: "2GB", validity: "7 days", price: 11.98 * 2 * 240, competitorPrice: 15.00 * 240 },
-        { name: "Explorer Plus", data: "5GB", validity: "15 days", price: 19.98 * 2 * 240, competitorPrice: 25.00 * 240 },
-        { name: "Explorer Pro", data: "10GB", validity: "30 days", price: 31.98 * 2 * 240, competitorPrice: 39.00 * 240 }
+        { name: "Explorer Basic", data: "2GB", validity: "7 days", savings: "40%", competitorName: "Airalo" },
+        { name: "Explorer Plus", data: "5GB", validity: "15 days", savings: "35%", competitorName: "Airalo" },
+        { name: "Explorer Pro", data: "10GB", validity: "30 days", savings: "30%", competitorName: "GigSky" }
       ],
       ecoImpact: "Reduces packaging waste by ~3g"
     },
@@ -51,13 +49,12 @@ const Destinations = () => {
       name: language === 'ar' ? 'إيطاليا' : 'Italy',
       image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=70",
       countries: 1,
-      startingPrice: 6.98 * 2 * 240, // Converted to DZD
-      competitorPrice: 10.50 * 240,
       competitorName: "Airalo",
+      savingsPercentage: "35%",
       plans: [
-        { name: "Italy Basic", data: "1GB", validity: "7 days", price: 6.98 * 2 * 240, competitorPrice: 10.50 * 240 },
-        { name: "Italy Plus", data: "3GB", validity: "15 days", price: 14.98 * 2 * 240, competitorPrice: 19.00 * 240 },
-        { name: "Italy Pro", data: "5GB", validity: "30 days", price: 22.98 * 2 * 240, competitorPrice: 29.00 * 240 }
+        { name: "Italy Basic", data: "1GB", validity: "7 days", savings: "35%", competitorName: "Airalo" },
+        { name: "Italy Plus", data: "3GB", validity: "15 days", savings: "30%", competitorName: "Airalo" },
+        { name: "Italy Pro", data: "5GB", validity: "30 days", savings: "25%", competitorName: "GigSky" }
       ],
       ecoImpact: "Saves ~2.5g plastic compared to physical SIM cards"
     },
@@ -65,13 +62,12 @@ const Destinations = () => {
       name: language === 'ar' ? 'اليابان' : 'Japan',
       image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=70",
       countries: 1,
-      startingPrice: 14.98 * 2 * 240, // Converted to DZD
-      competitorPrice: 19.00 * 240,
       competitorName: "GigSky",
+      savingsPercentage: "35%",
       plans: [
-        { name: "Japan Basic", data: "1GB", validity: "7 days", price: 14.98 * 2 * 240, competitorPrice: 19.00 * 240 },
-        { name: "Japan Plus", data: "3GB", validity: "15 days", price: 23.98 * 2 * 240, competitorPrice: 29.00 * 240 },
-        { name: "Japan Pro", data: "5GB", validity: "30 days", price: 34.98 * 2 * 240, competitorPrice: 45.00 * 240 }
+        { name: "Japan Basic", data: "1GB", validity: "7 days", savings: "35%", competitorName: "GigSky" },
+        { name: "Japan Plus", data: "3GB", validity: "15 days", savings: "30%", competitorName: "GigSky" },
+        { name: "Japan Pro", data: "5GB", validity: "30 days", savings: "25%", competitorName: "Holafly" }
       ],
       ecoImpact: "Reduces packaging waste by ~3g"
     },
@@ -79,13 +75,12 @@ const Destinations = () => {
       name: language === 'ar' ? 'الإمارات' : 'UAE',
       image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=70",
       countries: 1,
-      startingPrice: 8.98 * 2 * 240, // Converted to DZD
-      competitorPrice: 13.00 * 240,
       competitorName: "Airalo",
+      savingsPercentage: "40%",
       plans: [
-        { name: "UAE Basic", data: "1GB", validity: "7 days", price: 8.98 * 2 * 240, competitorPrice: 13.00 * 240 },
-        { name: "UAE Plus", data: "2GB", validity: "15 days", price: 15.98 * 2 * 240, competitorPrice: 20.00 * 240 },
-        { name: "UAE Pro", data: "5GB", validity: "30 days", price: 29.98 * 2 * 240, competitorPrice: 37.00 * 240 }
+        { name: "UAE Basic", data: "1GB", validity: "7 days", savings: "40%", competitorName: "Airalo" },
+        { name: "UAE Plus", data: "2GB", validity: "15 days", savings: "35%", competitorName: "Airalo" },
+        { name: "UAE Pro", data: "5GB", validity: "30 days", savings: "30%", competitorName: "GigSky" }
       ],
       ecoImpact: "Saves ~2.5g plastic compared to physical SIM cards"
     },
@@ -93,13 +88,12 @@ const Destinations = () => {
       name: language === 'ar' ? 'تركيا' : 'Turkey',
       image: "https://images.unsplash.com/photo-1527838832700-5059252407fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=70",
       countries: 1,
-      startingPrice: 7.98 * 2 * 240, // Converted to DZD
-      competitorPrice: 11.00 * 240,
       competitorName: "Holafly",
+      savingsPercentage: "40%",
       plans: [
-        { name: "Turkey Basic", data: "1GB", validity: "7 days", price: 7.98 * 2 * 240, competitorPrice: 11.00 * 240 },
-        { name: "Turkey Plus", data: "3GB", validity: "15 days", price: 16.98 * 2 * 240, competitorPrice: 19.00 * 240 },
-        { name: "Turkey Pro", data: "5GB", validity: "30 days", price: 25.98 * 2 * 240, competitorPrice: 30.00 * 240 }
+        { name: "Turkey Basic", data: "1GB", validity: "7 days", savings: "40%", competitorName: "Holafly" },
+        { name: "Turkey Plus", data: "3GB", validity: "15 days", savings: "35%", competitorName: "Airalo" },
+        { name: "Turkey Pro", data: "5GB", validity: "30 days", savings: "30%", competitorName: "GigSky" }
       ],
       ecoImpact: "Reduces packaging waste by ~3g"
     }
@@ -113,46 +107,36 @@ const Destinations = () => {
     }
   };
 
-  // Format price with thousands separator
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('ar-DZ').format(Math.round(price));
-  };
-
   return (
-    <section id="destinations" className="section-padding bg-green-50" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <section id="destinations" className="section-padding bg-purple-50" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="flex justify-center items-center gap-2 mb-2">
-            <TreeDeciduous className="h-6 w-6 text-green-600" />
+            <TreeDeciduous className="h-6 w-6 text-purple-600" />
             <h2 className="text-3xl md:text-4xl font-bold">{t.title}</h2>
           </div>
           <p className="text-gray-600 text-lg">
             {t.subtitle}
           </p>
-          <div className="mt-4 bg-green-100 p-4 rounded-lg inline-block">
-            <p className="text-green-800 font-semibold flex items-center gap-2">
+          <div className="mt-4 bg-purple-100 p-4 rounded-lg inline-block">
+            <p className="text-purple-800 font-semibold flex items-center gap-2">
               <MessageSquare className="h-5 w-5" />
               {language === 'ar' 
                 ? 'أسعار حصرية متاحة عبر المحادثة فقط! وفر أكثر من 40% مقارنة بالمنافسين'
                 : 'Exclusive prices available via chat only! Save over 40% compared to competitors'}
             </p>
           </div>
-          <div className="mt-3 text-sm text-green-700 flex justify-center items-center gap-1">
+          <div className="mt-3 text-sm text-purple-700 flex justify-center items-center gap-1">
             <Leaf className="h-4 w-4" />
             {language === 'ar' 
               ? 'بطاقات eSIM صديقة للبيئة - لا بلاستيك، لا نفايات، الحل الأخضر للسفر'
               : 'Eco-friendly eSIM cards - No plastic, no waste, the green travel solution'}
           </div>
-          <div className="mt-3 text-sm text-gray-600">
-            {language === 'ar' 
-              ? 'الأسعار معروضة بالدينار الجزائري'
-              : 'Prices shown in Algerian Dinar (DZD)'}
-          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {destinations.map((destination, index) => (
-            <Card key={index} className="overflow-hidden card-hover border-green-200 shadow-sm hover:shadow-green-100">
+            <Card key={index} className="overflow-hidden card-hover border-purple-200 shadow-sm hover:shadow-purple-100">
               <div className="relative h-48">
                 <img 
                   src={destination.image} 
@@ -160,41 +144,44 @@ const Destinations = () => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute top-2 right-2 bg-white p-1 rounded-full">
-                  <MapPin className="h-4 w-4 text-green-600" />
+                  <MapPin className="h-4 w-4 text-purple-600" />
                 </div>
-                <div className="absolute bottom-2 left-2 bg-green-100 px-2 py-1 rounded-full flex items-center gap-1">
-                  <Leaf className="h-3 w-3 text-green-600" />
-                  <span className="text-xs text-green-700 font-medium">
+                <div className="absolute bottom-2 left-2 bg-purple-100 px-2 py-1 rounded-full flex items-center gap-1">
+                  <Leaf className="h-3 w-3 text-purple-600" />
+                  <span className="text-xs text-purple-700 font-medium">
                     {language === 'ar' ? 'صديق للبيئة' : 'Eco-friendly'}
                   </span>
                 </div>
               </div>
-              <CardContent className="p-4 bg-gradient-to-b from-white to-green-50">
+              <CardContent className="p-4 bg-gradient-to-b from-white to-purple-50">
                 <h3 className="text-xl font-semibold mb-2">{destination.name}</h3>
                 <div className="flex justify-between items-center mb-3">
                   <span className="text-gray-600 text-sm">1GB / 7 days</span>
                   <div className="flex flex-col items-end">
-                    <span className="text-green-600 font-bold">{formatPrice(destination.startingPrice)} DZD</span>
-                    <span className="text-gray-400 text-xs line-through">{formatPrice(destination.competitorPrice)} DZD ({destination.competitorName})</span>
+                    <span className="text-purple-600 font-bold">
+                      {language === 'ar' 
+                        ? `وفر ${destination.savingsPercentage} مقارنة بـ` 
+                        : `Save ${destination.savingsPercentage} vs.`} {destination.competitorName}
+                    </span>
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
                   <Button 
-                    className="w-full bg-green-600 hover:bg-green-700"
+                    className="w-full bg-purple-600 hover:bg-purple-700"
                     onClick={() => setSelectedDestination(index)}
                   >
                     {t.explorePlans}
                   </Button>
                   <Button 
                     variant="outline" 
-                    className="w-full border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
+                    className="w-full border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
                     onClick={launchChatbot}
                   >
                     <MessageSquare className="h-4 w-4 mr-2" />
                     {language === 'ar' ? 'أفضل سعر عبر المحادثة' : 'Best Price via Chat'}
                   </Button>
                 </div>
-                <div className="mt-2 flex items-center gap-1 text-xs text-green-600">
+                <div className="mt-2 flex items-center gap-1 text-xs text-purple-600">
                   <Recycle className="h-3 w-3" />
                   <span>{destination.ecoImpact}</span>
                 </div>
@@ -206,12 +193,12 @@ const Destinations = () => {
         <div className="mt-12 text-center">
           <Button 
             onClick={launchChatbot} 
-            className="bg-green-600 hover:bg-green-700 gap-2"
+            className="bg-purple-600 hover:bg-purple-700 gap-2"
           >
             <MessageSquare className="h-4 w-4" />
             {language === 'ar' ? 'تحدث معنا للحصول على أسعار أفضل' : 'Chat for Better Prices'}
           </Button>
-          <p className="mt-4 text-sm text-green-700 flex justify-center items-center gap-2">
+          <p className="mt-4 text-sm text-purple-700 flex justify-center items-center gap-2">
             <Globe className="h-4 w-4" />
             {language === 'ar'
               ? 'كل eSIM يساعد في الحفاظ على البيئة من خلال تقليل استخدام البلاستيك والنفايات'
@@ -222,11 +209,11 @@ const Destinations = () => {
         {/* Dialog for showing the plan details */}
         <Dialog open={selectedDestination !== null} onOpenChange={() => setSelectedDestination(null)}>
           {selectedDestination !== null && (
-            <DialogContent className="sm:max-w-md bg-gradient-to-b from-white to-green-50 border-green-200">
+            <DialogContent className="sm:max-w-md bg-gradient-to-b from-white to-purple-50 border-purple-200">
               <DialogHeader>
                 <div className="flex items-center justify-between">
                   <DialogTitle className="text-2xl flex items-center gap-2">
-                    <TreeDeciduous className="h-5 w-5 text-green-600" />
+                    <TreeDeciduous className="h-5 w-5 text-purple-600" />
                     {destinations[selectedDestination].name} {language === 'ar' ? 'خطط الـ eSIM' : 'eSIM Plans'}
                   </DialogTitle>
                   <div className="flex items-center">
@@ -241,7 +228,7 @@ const Destinations = () => {
                 <DialogDescription>
                   {language === 'ar' ? 'اختر خطة البيانات المناسبة لرحلتك' : 'Choose a data plan suitable for your trip'}
                 </DialogDescription>
-                <div className="mt-1 text-xs text-green-600 flex items-center gap-1">
+                <div className="mt-1 text-xs text-purple-600 flex items-center gap-1">
                   <Leaf className="h-3 w-3" />
                   <span>
                     {language === 'ar'
@@ -253,12 +240,15 @@ const Destinations = () => {
               
               <div className="space-y-4 mt-4">
                 {destinations[selectedDestination].plans.map((plan, idx) => (
-                  <div key={idx} className="border border-green-200 rounded-lg p-4 hover:border-green-500 transition-colors bg-white">
+                  <div key={idx} className="border border-purple-200 rounded-lg p-4 hover:border-purple-500 transition-colors bg-white">
                     <div className="flex justify-between items-center mb-2">
                       <h4 className="font-medium text-lg">{plan.name}</h4>
                       <div className="flex flex-col items-end">
-                        <span className="text-green-600 font-bold">{formatPrice(plan.price)} DZD</span>
-                        <span className="text-xs text-gray-400 line-through">{formatPrice(plan.competitorPrice)} DZD ({destinations[selectedDestination].competitorName})</span>
+                        <span className="text-purple-600 font-bold">
+                          {language === 'ar' 
+                            ? `وفر ${plan.savings} مقارنة بـ` 
+                            : `Save ${plan.savings} vs.`} {plan.competitorName}
+                        </span>
                       </div>
                     </div>
                     <div className="grid grid-cols-2 gap-2 text-sm text-gray-600">
@@ -268,7 +258,7 @@ const Destinations = () => {
                     <div className="mt-3 flex justify-center">
                       <Button 
                         variant="outline" 
-                        className="w-full border-green-500 text-green-600 hover:bg-green-500 hover:text-white"
+                        className="w-full border-purple-500 text-purple-600 hover:bg-purple-500 hover:text-white"
                         onClick={launchChatbot}
                       >
                         <MessageSquare className="h-4 w-4 mr-2" />
@@ -276,7 +266,7 @@ const Destinations = () => {
                       </Button>
                     </div>
                     <div className="mt-2 text-center">
-                      <p className="text-xs text-green-600 font-medium">
+                      <p className="text-xs text-purple-600 font-medium">
                         {language === 'ar' 
                           ? 'توفير أكثر من 40% مقارنة مع المنافسين!' 
                           : 'Save over 40% compared to competitors!'}
@@ -291,7 +281,7 @@ const Destinations = () => {
                   {language === 'ar' ? 'جميع الخطط تشمل تنشيط فوري والدعم على مدار 24/7' : 'All plans include instant activation and 24/7 support'}
                 </div>
                 <div>
-                  <a href="tel:+213662417859" className="text-green-600 hover:underline text-xs">+213 662 417 859</a>
+                  <a href="tel:+213662417859" className="text-purple-600 hover:underline text-xs">+213 662 417 859</a>
                 </div>
               </div>
             </DialogContent>
