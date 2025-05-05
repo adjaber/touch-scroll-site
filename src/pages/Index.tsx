@@ -36,37 +36,37 @@ const Index = () => {
     return new Intl.NumberFormat('ar-DZ').format(Math.round(price));
   };
 
-  // Recalculated prices from Google Sheet * 2 * 240 for ecoESIM, converted to DZD for competitors
+  // Recalculated prices from Google Sheet * 480 for ecoESIM, converted to DZD for competitors
   const prices = {
     france: {
-      eco: 5.99 * 2 * 240,
-      airalo: 9.99 * 240,
-      gigsky: 12.99 * 240,
-      holafly: 24.00 * 240
+      eco: 5.99 * 480,
+      airalo: 9.99 * 480,
+      gigsky: 12.99 * 480,
+      holafly: 24.00 * 480
     },
     thailand: {
-      eco: 11.99 * 2 * 240,
-      airalo: 15.99 * 240,
-      gigsky: 19.99 * 240,
-      holafly: 34.00 * 240
+      eco: 11.99 * 480,
+      airalo: 15.99 * 480,
+      gigsky: 19.99 * 480,
+      holafly: 34.00 * 480
     },
     usa: {
-      eco: 7.99 * 2 * 240,
-      airalo: 9.99 * 240,
-      gigsky: 14.99 * 240,
-      holafly: 29.00 * 240
+      eco: 7.99 * 480,
+      airalo: 9.99 * 480,
+      gigsky: 14.99 * 480,
+      holafly: 29.00 * 480
     },
     italy: {
-      eco: 6.99 * 2 * 240,
-      airalo: 10.99 * 240,
-      gigsky: 13.99 * 240,
-      holafly: 24.00 * 240
+      eco: 6.99 * 480,
+      airalo: 10.99 * 480,
+      gigsky: 13.99 * 480,
+      holafly: 24.00 * 480
     },
     turkey: {
-      eco: 7.99 * 2 * 240,
-      airalo: 11.99 * 240,
-      gigsky: 15.99 * 240,
-      holafly: 23.00 * 240
+      eco: 7.99 * 480,
+      airalo: 11.99 * 480,
+      gigsky: 15.99 * 480,
+      holafly: 23.00 * 480
     }
   }
 
