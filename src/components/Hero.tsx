@@ -21,12 +21,19 @@ const Hero = () => {
       {/* Background image without overlay */}
       <div className="absolute inset-0 z-0">
         <div className="grid grid-cols-2 grid-rows-2 h-full w-full">
-          <div className="bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')" }}></div>
-          <div className="bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1486718448742-163732cd1544?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')" }}></div>
-          <div className="bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1493397212122-2b85dda8106b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')" }}></div>
-          <div className="bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')" }}></div>
+          {/* Algiers */}
+          <div className="bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1584720123728-dbe93b1885d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')" }}></div>
+          {/* Dubai */}
+          <div className="bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')" }}></div>
+          {/* Paris */}
+          <div className="bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')" }}></div>
+          {/* New York */}
+          <div className="bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')" }}></div>
         </div>
       </div>
+
+      {/* Semi-transparent background for text visibility */}
+      <div className="absolute inset-0 bg-black bg-opacity-50 z-5"></div>
 
       <div className="container relative z-10 mx-auto px-4 md:px-6">
         <div className="max-w-2xl text-white">

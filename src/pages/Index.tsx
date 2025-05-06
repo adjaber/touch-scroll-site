@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -36,37 +35,37 @@ const Index = () => {
     return new Intl.NumberFormat('ar-DZ').format(Math.round(price));
   };
 
-  // Recalculated prices from Google Sheet * 480 for ecoESIM and competitors, converted to DZD
+  // Updated prices with correct calculation: price in USD * 2.240 conversion rate to DZD
   const prices = {
     france: {
-      eco: 5.99 * 480,
-      airalo: 9.99 * 480,
-      gigsky: 12.99 * 480,
-      holafly: 24.00 * 480
+      eco: 0.9 * 2240,
+      airalo: 1.5 * 2240,
+      gigsky: 2.2 * 2240,
+      holafly: 4.0 * 2240
     },
     thailand: {
-      eco: 11.99 * 480,
-      airalo: 15.99 * 480,
-      gigsky: 19.99 * 480,
-      holafly: 34.00 * 480
+      eco: 2.0 * 2240,
+      airalo: 2.5 * 2240,
+      gigsky: 3.3 * 2240,
+      holafly: 5.7 * 2240
     },
     usa: {
-      eco: 7.99 * 480,
-      airalo: 9.99 * 480,
-      gigsky: 14.99 * 480,
-      holafly: 29.00 * 480
+      eco: 1.3 * 2240,
+      airalo: 1.7 * 2240,
+      gigsky: 2.5 * 2240,
+      holafly: 4.8 * 2240
     },
     italy: {
-      eco: 6.99 * 480,
-      airalo: 10.99 * 480,
-      gigsky: 13.99 * 480,
-      holafly: 24.00 * 480
+      eco: 1.1 * 2240,
+      airalo: 1.8 * 2240,
+      gigsky: 2.3 * 2240,
+      holafly: 4.0 * 2240
     },
     turkey: {
-      eco: 7.99 * 480,
-      airalo: 11.99 * 480,
-      gigsky: 15.99 * 480,
-      holafly: 23.00 * 480
+      eco: 1.3 * 2240,
+      airalo: 2.0 * 2240,
+      gigsky: 2.7 * 2240,
+      holafly: 3.8 * 2240
     }
   }
 
