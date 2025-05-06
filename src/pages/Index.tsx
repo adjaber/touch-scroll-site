@@ -6,6 +6,7 @@ import HowItWorks from '@/components/HowItWorks';
 import Benefits from '@/components/Benefits';
 import Destinations from '@/components/Destinations';
 import Testimonials from '@/components/Testimonials';
+import CompatiblePhones from '@/components/CompatiblePhones';
 import Footer from '@/components/Footer';
 import ChatbotWrapper from '@/components/ChatbotWrapper';
 import { useLanguage } from '@/context/LanguageContext';
@@ -185,6 +186,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      <CompatiblePhones />
       <Testimonials />
       <Footer />
       <ChatbotWrapper />
