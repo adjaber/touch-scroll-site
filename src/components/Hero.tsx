@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Globe, Leaf, Recycle } from "lucide-react";
@@ -33,7 +32,7 @@ const Hero = () => {
       </div>
 
       {/* Semi-transparent background for text visibility */}
-      <div className="absolute inset-0 bg-black bg-opacity-50 z-5"></div>
+      <div className="absolute inset-0 bg-black bg-opacity-60 z-5"></div>
 
       <div className="container relative z-10 mx-auto px-4 md:px-6">
         <div className="max-w-2xl text-white">

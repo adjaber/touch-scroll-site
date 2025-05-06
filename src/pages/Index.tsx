@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -35,37 +36,37 @@ const Index = () => {
     return new Intl.NumberFormat('ar-DZ').format(Math.round(price));
   };
 
-  // Updated prices with correct calculation: price in USD * 2.240 conversion rate to DZD
+  // Updated prices with correct calculation: price in USD * 480 conversion rate to DZD
   const prices = {
     france: {
-      eco: 0.9 * 2240,
-      airalo: 1.5 * 2240,
-      gigsky: 2.2 * 2240,
-      holafly: 4.0 * 2240
+      eco: 0.9 * 480,
+      airalo: 1.5 * 480,
+      gigsky: 2.2 * 480,
+      holafly: 4.0 * 480
     },
     thailand: {
-      eco: 2.0 * 2240,
-      airalo: 2.5 * 2240,
-      gigsky: 3.3 * 2240,
-      holafly: 5.7 * 2240
+      eco: 2.0 * 480,
+      airalo: 2.5 * 480,
+      gigsky: 3.3 * 480,
+      holafly: 5.7 * 480
     },
     usa: {
-      eco: 1.3 * 2240,
-      airalo: 1.7 * 2240,
-      gigsky: 2.5 * 2240,
-      holafly: 4.8 * 2240
+      eco: 1.3 * 480,
+      airalo: 1.7 * 480,
+      gigsky: 2.5 * 480,
+      holafly: 4.8 * 480
     },
     italy: {
-      eco: 1.1 * 2240,
-      airalo: 1.8 * 2240,
-      gigsky: 2.3 * 2240,
-      holafly: 4.0 * 2240
+      eco: 1.1 * 480,
+      airalo: 1.8 * 480,
+      gigsky: 2.3 * 480,
+      holafly: 4.0 * 480
     },
     turkey: {
-      eco: 1.3 * 2240,
-      airalo: 2.0 * 2240,
-      gigsky: 2.7 * 2240,
-      holafly: 3.8 * 2240
+      eco: 1.3 * 480,
+      airalo: 2.0 * 480,
+      gigsky: 2.7 * 480,
+      holafly: 3.8 * 480
     }
   }
 
