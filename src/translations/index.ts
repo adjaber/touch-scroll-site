@@ -112,11 +112,11 @@ export const translations = {
       destinations: 'Destinations',
       benefits: 'Avantages',
       testimonials: 'Témoignages',
-      getEsim: 'Obtenez votre eSIM'
+      getEsim: 'Obtenir votre eSIM'
     },
     hero: {
       title: 'Restez connecté partout dans le monde avec la technologie eSIM',
-      subtitle: 'Connectivité de données instantanée dans plus de 190 pays. Pas besoin de carte SIM physique.',
+      subtitle: 'Connectivité données instantanée dans plus de 190 pays. Pas besoin de carte SIM physique.',
       cta: 'Obtenez votre eSIM maintenant',
       learnMore: 'Découvrez comment ça marche',
       connectedUsers: 'voyageurs connectés ce mois-ci'
@@ -153,7 +153,7 @@ export const translations = {
         },
         {
           title: "Connectivité instantanée",
-          description: "Pas besoin de chercher des cartes SIM locales ou de faire face à des barrières linguistiques"
+          description: "Plus besoin de chercher des cartes SIM locales ou de faire face à des barrières linguistiques"
         },
         {
           title: "Économique",
@@ -161,15 +161,15 @@ export const translations = {
         },
         {
           title: "Connexion sécurisée",
-          description: "Sécurité améliorée par rapport aux réseaux WiFi publics"
+          description: "Sécurité renforcée par rapport aux réseaux WiFi publics"
         },
         {
           title: "Forfaits flexibles",
-          description: "Choisissez parmi des forfaits journaliers, hebdomadaires ou mensuels pour s'adapter à votre voyage"
+          description: "Choisissez parmi des forfaits journaliers, hebdomadaires ou mensuels adaptés à votre voyage"
         },
         {
           title: "Vitesses rapides",
-          description: "Données à haute vitesse sur les réseaux 4G/LTE et 5G où disponibles"
+          description: "Données à haut débit sur les réseaux 4G/LTE et 5G où disponibles"
         }
       ]
     },
@@ -185,7 +185,7 @@ export const translations = {
       title: "Ce que disent nos voyageurs",
       subtitle: "Rejoignez des milliers de voyageurs satisfaits qui restent connectés avec nos eSIMs",
       cta: {
-        title: "Prêt à expérimenter une connectivité mondiale sans faille?",
+        title: "Prêt à découvrir une connectivité mondiale sans faille ?",
         subtitle: "Rejoignez des milliers de voyageurs qui profitent d'un accès Internet sans tracas dans le monde entier avec la technologie eSIM d'ecoESIM.",
         button: "Obtenez votre eSIM aujourd'hui"
       }
@@ -201,7 +201,7 @@ export const translations = {
         destinations: "Destinations",
         benefits: "Avantages",
         testimonials: "Témoignages",
-        faqs: "FAQ",
+        faqs: "Questions fréquentes",
         support: "Centre d'assistance",
         blog: "Blog",
         compatibility: "Vérification de compatibilité",

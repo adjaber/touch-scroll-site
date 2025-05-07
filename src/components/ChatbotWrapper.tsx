@@ -88,14 +88,20 @@ const ChatbotWrapper = () => {
             <p className="text-sm font-medium">
               {language === 'ar' 
                 ? 'احصل على أفضل أسعار eSIM هنا! اشترِ الآن من خلال المحادثة'
+                : language === 'fr'
+                ? 'Obtenez les MEILLEURS prix eSIM ici ! Achetez maintenant via le chat'
                 : 'Get the BEST eSIM prices here! Buy now through chat'}
             </p>
             <div className={`mt-2 flex ${dir === 'rtl' ? 'flex-row-reverse' : 'flex-row'} justify-between`}>
               <span className="text-xs text-green-600 font-bold">
-                {language === 'ar' ? 'عروض حصرية عبر المحادثة!' : 'EXCLUSIVE deals via chat!'}
+                {language === 'ar' ? 'عروض حصرية عبر المحادثة!' : 
+                 language === 'fr' ? 'Offres EXCLUSIVES via chat !' : 
+                 'EXCLUSIVE deals via chat!'}
               </span>
               <span className="text-xs text-gray-500">
-                {language === 'ar' ? 'وفر أكثر من 50%' : 'Save over 50%'}
+                {language === 'ar' ? 'وفر أكثر من 50%' : 
+                 language === 'fr' ? 'Économisez plus de 50%' : 
+                 'Save over 50%'}
               </span>
             </div>
           </div>

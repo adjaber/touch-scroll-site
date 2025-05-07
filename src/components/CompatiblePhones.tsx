@@ -11,7 +11,8 @@ const CompatiblePhones = () => {
   // Organize phones by brand
   const phones = {
     apple: {
-      title: language === 'ar' ? 'أجهزة أبل' : 'Apple Devices',
+      title: language === 'ar' ? 'أجهزة أبل' : 
+             language === 'fr' ? 'Appareils Apple' : 'Apple Devices',
       icon: <Smartphone className="h-5 w-5 text-purple-600" />,
       devices: [
         'iPhone 14 Pro Max', 'iPhone 14 Pro', 'iPhone 14 Plus', 'iPhone 14',
@@ -22,7 +23,8 @@ const CompatiblePhones = () => {
       ]
     },
     samsung: {
-      title: language === 'ar' ? 'أجهزة سامسونج' : 'Samsung Devices',
+      title: language === 'ar' ? 'أجهزة سامسونج' : 
+             language === 'fr' ? 'Appareils Samsung' : 'Samsung Devices',
       icon: <SmartphoneNfc className="h-5 w-5 text-purple-600" />,
       devices: [
         'Galaxy S25 Series', 'Galaxy S24 Ultra', 'Galaxy S24+', 'Galaxy S24',
@@ -35,7 +37,8 @@ const CompatiblePhones = () => {
       ]
     },
     google: {
-      title: language === 'ar' ? 'أجهزة جوجل' : 'Google Devices',
+      title: language === 'ar' ? 'أجهزة جوجل' : 
+             language === 'fr' ? 'Appareils Google' : 'Google Devices',
       icon: <Phone className="h-5 w-5 text-purple-600" />,
       devices: [
         'Pixel 9 Pro XL', 'Pixel 9 Pro', 'Pixel 9',
@@ -46,7 +49,8 @@ const CompatiblePhones = () => {
       ]
     },
     other: {
-      title: language === 'ar' ? 'أجهزة أخرى' : 'Other Devices',
+      title: language === 'ar' ? 'أجهزة أخرى' : 
+             language === 'fr' ? 'Autres appareils' : 'Other Devices',
       icon: <Smartphone className="h-5 w-5 text-purple-600" />,
       devices: [
         'Huawei P50 Pro', 'Huawei P40 Pro', 'Huawei P40',
@@ -65,11 +69,15 @@ const CompatiblePhones = () => {
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {language === 'ar' ? 'الأجهزة المتوافقة مع eSIM' : 'eSIM Compatible Devices'}
+            {language === 'ar' ? 'الأجهزة المتوافقة مع eSIM' : 
+             language === 'fr' ? 'Appareils compatibles eSIM' :
+             'eSIM Compatible Devices'}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {language === 'ar'
               ? 'قائمة بالهواتف والأجهزة التي تدعم تقنية eSIM حتى عام 2025'
+              : language === 'fr'
+              ? 'Liste complète des téléphones et appareils compatibles avec la technologie eSIM jusqu\'en 2025'
               : 'A comprehensive list of phones and devices supporting eSIM technology up to 2025'}
           </p>
         </div>
@@ -99,11 +107,15 @@ const CompatiblePhones = () => {
             <h3 className="text-xl font-bold text-purple-800 mb-3">
               {language === 'ar'
                 ? 'هل هاتفك غير مدرج؟'
+                : language === 'fr'
+                ? 'Votre téléphone n\'est pas listé ?'
                 : 'Is your phone not listed?'}
             </h3>
             <p className="text-gray-700 mb-4">
               {language === 'ar'
                 ? 'لا تقلق! معظم الهواتف الذكية الحديثة التي تم إطلاقها منذ عام 2020 تدعم تقنية eSIM. تحقق من التوافق عبر الدردشة.'
+                : language === 'fr'
+                ? 'Pas d\'inquiétude ! La plupart des smartphones récents sortis depuis 2020 prennent en charge la technologie eSIM. Vérifiez la compatibilité via le chat.'
                 : 'Don\'t worry! Most modern smartphones released since 2020 support eSIM technology. Check compatibility via chat.'}
             </p>
             <Button 
@@ -117,7 +129,9 @@ const CompatiblePhones = () => {
               className={`bg-purple-600 hover:bg-purple-700 ${dir === 'rtl' ? 'flex flex-row-reverse' : ''}`}
             >
               <Smartphone className={`h-4 w-4 ${dir === 'rtl' ? 'mr-0 ml-2' : 'ml-0 mr-2'}`} />
-              {language === 'ar' ? 'تحقق من توافق هاتفك' : 'Check Your Phone Compatibility'}
+              {language === 'ar' ? 'تحقق من توافق هاتفك' : 
+               language === 'fr' ? 'Vérifier la compatibilité de votre téléphone' :
+               'Check Your Phone Compatibility'}
             </Button>
           </div>
         </div>

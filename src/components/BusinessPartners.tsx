@@ -17,7 +17,7 @@ const BusinessPartners = () => {
       description: language === 'ar' 
         ? 'قدم لمسافريك خدمة اتصال عالية الجودة أثناء السفر. زد من رضا العملاء وكن الناقل المفضل لديهم مع خدمة eSIM المتكاملة.'
         : language === 'fr'
-        ? 'Offrez à vos passagers une connectivité de haute qualité pendant leurs voyages. Augmentez la satisfaction client et devenez leur transporteur préféré avec un service eSIM intégré.'
+        ? 'Offrez à vos passagers une connectivité de qualité supérieure pendant leurs voyages. Améliorez la satisfaction client et devenez leur transporteur préféré avec un service eSIM intégré.'
         : 'Offer your passengers high-quality connectivity during their travels. Increase customer satisfaction and become their preferred carrier with integrated eSIM service.'
     },
     {
@@ -27,7 +27,7 @@ const BusinessPartners = () => {
       description: language === 'ar'
         ? 'عزز عروض الرحلات الخاصة بك مع بطاقات eSIM. أضف قيمة لباقاتك السياحية واكسب عمولات إضافية على كل بطاقة eSIM مباعة.'
         : language === 'fr'
-        ? 'Améliorez vos offres de voyage avec les eSIMs. Ajoutez de la valeur à vos forfaits et gagnez des commissions supplémentaires sur chaque eSIM vendue.'
+        ? 'Enrichissez vos offres de voyage avec les eSIMs. Ajoutez de la valeur à vos forfaits touristiques et gagnez des commissions supplémentaires sur chaque eSIM vendue.'
         : 'Enhance your trip offerings with eSIMs. Add value to your travel packages and earn additional commissions on every eSIM sold.'
     },
     {
@@ -37,7 +37,7 @@ const BusinessPartners = () => {
       description: language === 'ar'
         ? 'قدم تجربة متصلة لمجموعات السياح. حلول مخصصة للمجموعات الكبيرة مع أسعار تنافسية وإدارة مبسطة.'
         : language === 'fr'
-        ? 'Offrez une expérience connectée pour les groupes de touristes. Solutions personnalisées pour les grands groupes avec des prix compétitifs et une gestion simplifiée.'
+        ? 'Proposez une expérience connectée pour les groupes touristiques. Solutions sur mesure pour grands groupes avec tarifs compétitifs et gestion simplifiée.'
         : 'Provide a connected experience for tour groups. Custom solutions for large groups with competitive pricing and simplified management.'
     },
     {
@@ -47,7 +47,7 @@ const BusinessPartners = () => {
       description: language === 'ar'
         ? 'اجعل سفر الأعمال أكثر سلاسة. خطط eSIM مخصصة لموظفيك المسافرين مع فواتير مركزية وتحكم في النفقات.'
         : language === 'fr'
-        ? 'Rendez les voyages d\'affaires plus fluides. Plans eSIM personnalisés pour vos employés en déplacement avec facturation centralisée et contrôle des dépenses.'
+        ? 'Simplifiez les voyages d\'affaires. Forfaits eSIM personnalisés pour vos collaborateurs en déplacement avec facturation centralisée et contrôle des dépenses.'
         : 'Make business travel more seamless. Custom eSIM plans for your traveling employees with centralized billing and expense control.'
     }
   ];
@@ -58,14 +58,14 @@ const BusinessPartners = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             {language === 'ar' ? 'شراكات قوية لشركات السفر' : 
-             language === 'fr' ? 'Partenariats solides pour les entreprises de voyage' : 
+             language === 'fr' ? 'Partenariats solides pour entreprises du voyage' : 
              'Strong Partnerships for Travel Companies'}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {language === 'ar'
               ? 'عزز عروض خدماتك وزد من إيراداتك من خلال شراكة مع ecoESIM'
               : language === 'fr'
-              ? 'Améliorez vos offres de services et augmentez vos revenus grâce à un partenariat avec ecoESIM'
+              ? 'Améliorez vos services et augmentez vos revenus grâce à un partenariat avec ecoESIM'
               : 'Enhance your service offerings and increase your revenue with an ecoESIM partnership'}
           </p>
         </div>
@@ -91,14 +91,14 @@ const BusinessPartners = () => {
         <div className="bg-purple-50 rounded-xl p-8 max-w-4xl mx-auto text-center">
           <h3 className="text-2xl font-bold text-purple-800 mb-4">
             {language === 'ar' ? 'برنامج شركاء الأعمال من ecoESIM' : 
-             language === 'fr' ? 'Programme Partenaires Entreprises d\'ecoESIM' : 
+             language === 'fr' ? 'Programme Partenaires d\'ecoESIM' : 
              'ecoESIM Business Partner Program'}
           </h3>
           <p className="text-lg text-gray-700 mb-6">
             {language === 'ar'
               ? 'برنامج الشراكة المرن الذي يتكيف مع احتياجات عملك. انضم إلى شبكة شركائنا المتنامية واستفد من الفرص الجديدة للنمو والإيرادات.'
               : language === 'fr'
-              ? 'Un programme de partenariat flexible qui s\'adapte aux besoins de votre entreprise. Rejoignez notre réseau de partenaires en pleine croissance et bénéficiez de nouvelles opportunités de croissance et de revenus.'
+              ? 'Un programme de partenariat flexible qui s\'adapte aux besoins de votre entreprise. Rejoignez notre réseau de partenaires en pleine expansion et bénéficiez de nouvelles opportunités de croissance et de revenus.'
               : 'A flexible partnership program that adapts to your business needs. Join our growing partner network and benefit from new opportunities for growth and revenue.'}
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
@@ -114,7 +114,7 @@ const BusinessPartners = () => {
               className={`bg-purple-600 hover:bg-purple-700 ${dir === 'rtl' ? 'flex flex-row-reverse' : ''}`}
             >
               {language === 'ar' ? 'تواصل مع فريق الشراكات' : 
-               language === 'fr' ? 'Contacter l\'équipe des partenariats' : 
+               language === 'fr' ? 'Contacter l\'équipe partenaires' : 
                'Connect with Partnership Team'}
             </Button>
             <Button 
