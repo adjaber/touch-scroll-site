@@ -21,8 +21,8 @@ const Hero = () => {
       {/* Background image without overlay */}
       <div className="absolute inset-0 z-0">
         <div className="grid grid-cols-2 grid-rows-2 h-full w-full">
-          {/* Algiers */}
-          <div className="bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1584720123728-dbe93b1885d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')" }}></div>
+          {/* Algiers - Updated with a more reliable image source */}
+          <div className="bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1597568006066-fdd31f210ae2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')" }}></div>
           {/* Dubai */}
           <div className="bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')" }}></div>
           {/* Paris */}
