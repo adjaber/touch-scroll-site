@@ -104,6 +104,112 @@ export const translations = {
       }
     }
   },
+  
+  fr: {
+    nav: {
+      home: 'Accueil',
+      howItWorks: 'Comment ça marche',
+      destinations: 'Destinations',
+      benefits: 'Avantages',
+      testimonials: 'Témoignages',
+      getEsim: 'Obtenez votre eSIM'
+    },
+    hero: {
+      title: 'Restez connecté partout dans le monde avec la technologie eSIM',
+      subtitle: 'Connectivité de données instantanée dans plus de 190 pays. Pas besoin de carte SIM physique.',
+      cta: 'Obtenez votre eSIM maintenant',
+      learnMore: 'Découvrez comment ça marche',
+      connectedUsers: 'voyageurs connectés ce mois-ci'
+    },
+    howItWorks: {
+      title: "Comment fonctionne ecoESIM",
+      subtitle: "Connectez-vous en quelques minutes avec notre processus simple en 4 étapes",
+      steps: [
+        {
+          title: "Choisissez votre destination",
+          description: "Sélectionnez parmi plus de 190 pays où notre service eSIM est disponible"
+        },
+        {
+          title: "Achetez et installez",
+          description: "Achetez votre eSIM et scannez le code QR avec votre appareil compatible"
+        },
+        {
+          title: "Activez quand vous êtes prêt",
+          description: "Activez votre eSIM immédiatement ou à votre arrivée à destination"
+        },
+        {
+          title: "Restez connecté",
+          description: "Profitez d'une connectivité sans faille tout au long de votre voyage"
+        }
+      ]
+    },
+    benefits: {
+      title: "Pourquoi choisir ecoESIM",
+      subtitle: "Découvrez la solution ultime de connectivité pour vos voyages",
+      items: [
+        {
+          title: "Couverture mondiale",
+          description: "Connectez-vous dans plus de 190 pays avec des partenaires réseau fiables"
+        },
+        {
+          title: "Connectivité instantanée",
+          description: "Pas besoin de chercher des cartes SIM locales ou de faire face à des barrières linguistiques"
+        },
+        {
+          title: "Économique",
+          description: "Évitez les frais d'itinérance coûteux avec nos forfaits abordables"
+        },
+        {
+          title: "Connexion sécurisée",
+          description: "Sécurité améliorée par rapport aux réseaux WiFi publics"
+        },
+        {
+          title: "Forfaits flexibles",
+          description: "Choisissez parmi des forfaits journaliers, hebdomadaires ou mensuels pour s'adapter à votre voyage"
+        },
+        {
+          title: "Vitesses rapides",
+          description: "Données à haute vitesse sur les réseaux 4G/LTE et 5G où disponibles"
+        }
+      ]
+    },
+    destinations: {
+      title: "Destinations populaires",
+      subtitle: "Explorez notre large couverture à travers les continents",
+      viewAll: "Voir toutes les destinations",
+      explorePlans: "Explorer les forfaits",
+      countries: "pays",
+      from: "À partir de"
+    },
+    testimonials: {
+      title: "Ce que disent nos voyageurs",
+      subtitle: "Rejoignez des milliers de voyageurs satisfaits qui restent connectés avec nos eSIMs",
+      cta: {
+        title: "Prêt à expérimenter une connectivité mondiale sans faille?",
+        subtitle: "Rejoignez des milliers de voyageurs qui profitent d'un accès Internet sans tracas dans le monde entier avec la technologie eSIM d'ecoESIM.",
+        button: "Obtenez votre eSIM aujourd'hui"
+      }
+    },
+    footer: {
+      quickLinks: "Liens rapides",
+      resources: "Ressources",
+      contactUs: "Contactez-nous",
+      rights: "Tous droits réservés.",
+      links: {
+        home: "Accueil",
+        howItWorks: "Comment ça marche",
+        destinations: "Destinations",
+        benefits: "Avantages",
+        testimonials: "Témoignages",
+        faqs: "FAQ",
+        support: "Centre d'assistance",
+        blog: "Blog",
+        compatibility: "Vérification de compatibilité",
+        coverage: "Carte de couverture"
+      }
+    }
+  },
+  
   ar: {
     nav: {
       home: 'الرئيسية',

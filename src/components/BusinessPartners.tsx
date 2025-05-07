@@ -12,30 +12,42 @@ const BusinessPartners = () => {
   const benefits = [
     {
       icon: <Plane className="h-8 w-8 text-purple-600" />,
-      title: language === 'ar' ? 'شركات الطيران' : 'Airlines',
+      title: language === 'ar' ? 'شركات الطيران' : 
+             language === 'fr' ? 'Compagnies aériennes' : 'Airlines',
       description: language === 'ar' 
         ? 'قدم لمسافريك خدمة اتصال عالية الجودة أثناء السفر. زد من رضا العملاء وكن الناقل المفضل لديهم مع خدمة eSIM المتكاملة.'
+        : language === 'fr'
+        ? 'Offrez à vos passagers une connectivité de haute qualité pendant leurs voyages. Augmentez la satisfaction client et devenez leur transporteur préféré avec un service eSIM intégré.'
         : 'Offer your passengers high-quality connectivity during their travels. Increase customer satisfaction and become their preferred carrier with integrated eSIM service.'
     },
     {
       icon: <Briefcase className="h-8 w-8 text-purple-600" />,
-      title: language === 'ar' ? 'وكالات السفر' : 'Travel Agencies',
+      title: language === 'ar' ? 'وكالات السفر' : 
+             language === 'fr' ? 'Agences de voyage' : 'Travel Agencies',
       description: language === 'ar'
         ? 'عزز عروض الرحلات الخاصة بك مع بطاقات eSIM. أضف قيمة لباقاتك السياحية واكسب عمولات إضافية على كل بطاقة eSIM مباعة.'
+        : language === 'fr'
+        ? 'Améliorez vos offres de voyage avec les eSIMs. Ajoutez de la valeur à vos forfaits et gagnez des commissions supplémentaires sur chaque eSIM vendue.'
         : 'Enhance your trip offerings with eSIMs. Add value to your travel packages and earn additional commissions on every eSIM sold.'
     },
     {
       icon: <Globe className="h-8 w-8 text-purple-600" />,
-      title: language === 'ar' ? 'منظمي الرحلات' : 'Tour Operators',
+      title: language === 'ar' ? 'منظمي الرحلات' : 
+             language === 'fr' ? 'Tour-opérateurs' : 'Tour Operators',
       description: language === 'ar'
         ? 'قدم تجربة متصلة لمجموعات السياح. حلول مخصصة للمجموعات الكبيرة مع أسعار تنافسية وإدارة مبسطة.'
+        : language === 'fr'
+        ? 'Offrez une expérience connectée pour les groupes de touristes. Solutions personnalisées pour les grands groupes avec des prix compétitifs et une gestion simplifiée.'
         : 'Provide a connected experience for tour groups. Custom solutions for large groups with competitive pricing and simplified management.'
     },
     {
       icon: <Users className="h-8 w-8 text-purple-600" />,
-      title: language === 'ar' ? 'الشركات' : 'Corporate Travel',
+      title: language === 'ar' ? 'الشركات' : 
+             language === 'fr' ? 'Voyages d\'affaires' : 'Corporate Travel',
       description: language === 'ar'
         ? 'اجعل سفر الأعمال أكثر سلاسة. خطط eSIM مخصصة لموظفيك المسافرين مع فواتير مركزية وتحكم في النفقات.'
+        : language === 'fr'
+        ? 'Rendez les voyages d\'affaires plus fluides. Plans eSIM personnalisés pour vos employés en déplacement avec facturation centralisée et contrôle des dépenses.'
         : 'Make business travel more seamless. Custom eSIM plans for your traveling employees with centralized billing and expense control.'
     }
   ];
@@ -45,11 +57,15 @@ const BusinessPartners = () => {
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {language === 'ar' ? 'شراكات قوية لشركات السفر' : 'Strong Partnerships for Travel Companies'}
+            {language === 'ar' ? 'شراكات قوية لشركات السفر' : 
+             language === 'fr' ? 'Partenariats solides pour les entreprises de voyage' : 
+             'Strong Partnerships for Travel Companies'}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {language === 'ar'
               ? 'عزز عروض خدماتك وزد من إيراداتك من خلال شراكة مع ecoESIM'
+              : language === 'fr'
+              ? 'Améliorez vos offres de services et augmentez vos revenus grâce à un partenariat avec ecoESIM'
               : 'Enhance your service offerings and increase your revenue with an ecoESIM partnership'}
           </p>
         </div>
@@ -74,11 +90,15 @@ const BusinessPartners = () => {
         
         <div className="bg-purple-50 rounded-xl p-8 max-w-4xl mx-auto text-center">
           <h3 className="text-2xl font-bold text-purple-800 mb-4">
-            {language === 'ar' ? 'برنامج شركاء الأعمال من ecoESIM' : 'ecoESIM Business Partner Program'}
+            {language === 'ar' ? 'برنامج شركاء الأعمال من ecoESIM' : 
+             language === 'fr' ? 'Programme Partenaires Entreprises d\'ecoESIM' : 
+             'ecoESIM Business Partner Program'}
           </h3>
           <p className="text-lg text-gray-700 mb-6">
             {language === 'ar'
               ? 'برنامج الشراكة المرن الذي يتكيف مع احتياجات عملك. انضم إلى شبكة شركائنا المتنامية واستفد من الفرص الجديدة للنمو والإيرادات.'
+              : language === 'fr'
+              ? 'Un programme de partenariat flexible qui s\'adapte aux besoins de votre entreprise. Rejoignez notre réseau de partenaires en pleine croissance et bénéficiez de nouvelles opportunités de croissance et de revenus.'
               : 'A flexible partnership program that adapts to your business needs. Join our growing partner network and benefit from new opportunities for growth and revenue.'}
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
@@ -93,14 +113,18 @@ const BusinessPartners = () => {
               size="lg"
               className={`bg-purple-600 hover:bg-purple-700 ${dir === 'rtl' ? 'flex flex-row-reverse' : ''}`}
             >
-              {language === 'ar' ? 'تواصل مع فريق الشراكات' : 'Connect with Partnership Team'}
+              {language === 'ar' ? 'تواصل مع فريق الشراكات' : 
+               language === 'fr' ? 'Contacter l\'équipe des partenariats' : 
+               'Connect with Partnership Team'}
             </Button>
             <Button 
               variant="outline" 
               size="lg"
               className={`border-purple-600 text-purple-600 hover:bg-purple-50 ${dir === 'rtl' ? 'flex flex-row-reverse' : ''}`}
             >
-              {language === 'ar' ? 'تحميل كتيب الشراكة' : 'Download Partnership Brochure'}
+              {language === 'ar' ? 'تحميل كتيب الشراكة' : 
+               language === 'fr' ? 'Télécharger la brochure partenaire' : 
+               'Download Partnership Brochure'}
             </Button>
           </div>
         </div>
