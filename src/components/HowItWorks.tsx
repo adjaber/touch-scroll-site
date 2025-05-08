@@ -28,24 +28,6 @@ const HowItWorks = () => {
     <Map className="h-10 w-10 text-travel-teal" />
   ];
 
-  // Android eSIM activation images
-  const androidImages = [
-    "/assets/android-settings.jpg",
-    "/assets/android-network.jpg",
-    "/assets/android-sim-cards.jpg",
-    "/assets/android-add-esim.jpg",
-    "/assets/android-scan-qr.jpg"
-  ];
-
-  // iPhone eSIM activation images
-  const iphoneImages = [
-    "/assets/iphone-settings.jpg",
-    "/assets/iphone-cellular.jpg",
-    "/assets/iphone-add-plan.jpg",
-    "/assets/iphone-scan-qr.jpg",
-    "/assets/iphone-confirm.jpg"
-  ];
-
   // eSIM activation steps
   const androidSteps = [
     {
@@ -55,8 +37,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Accédez à "Paramètres" sur votre téléphone Android' 
         : 'Navigate to "Settings" on your Android phone',
-      icon: <Smartphone className="h-8 w-8 text-travel-orange" />,
-      image: androidImages[0]
+      icon: <Smartphone className="h-8 w-8 text-travel-orange" />
     },
     {
       title: language === 'ar' ? 'انتقل إلى الشبكة والإنترنت' : language === 'fr' ? 'Allez à Réseau et Internet' : 'Go to Network & Internet',
@@ -65,8 +46,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Appuyez sur "Réseau et Internet" ou "Connexions"' 
         : 'Tap on "Network & Internet" or "Connections"',
-      icon: <Globe className="h-8 w-8 text-travel-blue" />,
-      image: androidImages[1]
+      icon: <Globe className="h-8 w-8 text-travel-blue" />
     },
     {
       title: language === 'ar' ? 'اضغط على بطاقات SIM' : language === 'fr' ? 'Appuyez sur Cartes SIM' : 'Tap on SIM Cards',
@@ -75,8 +55,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Sélectionnez "Cartes SIM" ou "Gestion des cartes SIM"' 
         : 'Select "SIM cards" or "SIM card manager"',
-      icon: <Phone className="h-8 w-8 text-travel-purple" />,
-      image: androidImages[2]
+      icon: <Phone className="h-8 w-8 text-travel-purple" />
     },
     {
       title: language === 'ar' ? 'أضف خطة البيانات' : language === 'fr' ? 'Ajouter un forfait de données' : 'Add Data Plan',
@@ -85,8 +64,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Appuyez sur "Ajouter un forfait de données" ou "Ajouter une eSIM"' 
         : 'Tap on "Add data plan" or "Add eSIM"',
-      icon: <Zap className="h-8 w-8 text-travel-teal" />,
-      image: androidImages[3]
+      icon: <Zap className="h-8 w-8 text-travel-teal" />
     },
     {
       title: language === 'ar' ? 'مسح رمز QR' : language === 'fr' ? 'Scanner le code QR' : 'Scan QR Code',
@@ -95,8 +73,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Scannez le code QR ecoESIM ou entrez le code manuellement' 
         : 'Scan the ecoESIM QR code or enter the code manually',
-      icon: <Smartphone className="h-8 w-8 text-travel-orange" />,
-      image: androidImages[4]
+      icon: <Smartphone className="h-8 w-8 text-travel-orange" />
     }
   ];
 
@@ -108,8 +85,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Accédez à l\'application "Paramètres" sur votre iPhone' 
         : 'Navigate to the "Settings" app on your iPhone',
-      icon: <Smartphone className="h-8 w-8 text-travel-orange" />,
-      image: iphoneImages[0]
+      icon: <Smartphone className="h-8 w-8 text-travel-orange" />
     },
     {
       title: language === 'ar' ? 'اضغط على الجوال' : language === 'fr' ? 'Appuyez sur Cellulaire' : 'Tap on Cellular',
@@ -118,8 +94,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Sélectionnez "Cellulaire" ou "Données cellulaires"' 
         : 'Select "Cellular" or "Mobile Data"',
-      icon: <Phone className="h-8 w-8 text-travel-blue" />,
-      image: iphoneImages[1]
+      icon: <Phone className="h-8 w-8 text-travel-blue" />
     },
     {
       title: language === 'ar' ? 'إضافة خطة بيانات الجوال' : language === 'fr' ? 'Ajouter un forfait de données' : 'Add Cellular Plan',
@@ -128,8 +103,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Appuyez sur "Ajouter un forfait de données"' 
         : 'Tap on "Add Cellular Plan"',
-      icon: <Zap className="h-8 w-8 text-travel-purple" />,
-      image: iphoneImages[2]
+      icon: <Zap className="h-8 w-8 text-travel-purple" />
     },
     {
       title: language === 'ar' ? 'مسح رمز QR' : language === 'fr' ? 'Scanner le code QR' : 'Scan QR Code',
@@ -138,8 +112,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Scannez le code QR ecoESIM ou entrez le code manuellement' 
         : 'Scan the ecoESIM QR code or enter the code manually',
-      icon: <Globe className="h-8 w-8 text-travel-teal" />,
-      image: iphoneImages[3]
+      icon: <Globe className="h-8 w-8 text-travel-teal" />
     },
     {
       title: language === 'ar' ? 'تأكيد وتفعيل' : language === 'fr' ? 'Confirmer et activer' : 'Confirm and Activate',
@@ -148,8 +121,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Appuyez sur "Confirmer" et attendez que votre eSIM soit activée' 
         : 'Tap "Confirm" and wait for your eSIM to be activated',
-      icon: <Smartphone className="h-8 w-8 text-travel-orange" />,
-      image: iphoneImages[4]
+      icon: <Smartphone className="h-8 w-8 text-travel-orange" />
     }
   ];
 
@@ -231,19 +203,12 @@ const HowItWorks = () => {
                       </div>
                     </div>
 
-                    <div className="py-4 min-h-[400px]">
+                    <div className="py-4 min-h-[200px]">
                       <div className="flex items-center gap-4 mb-4">
                         {androidSteps[activeStep.android].icon}
                         <h5 className="font-bold">{androidSteps[activeStep.android].title}</h5>
                       </div>
                       <div className="mb-4">
-                        <div className="border rounded-md overflow-hidden shadow-sm mb-4 bg-gray-50 p-2">
-                          <img 
-                            src={androidSteps[activeStep.android].image || "/placeholder.svg"} 
-                            alt={`Android step ${activeStep.android + 1}`} 
-                            className="mx-auto h-64 object-contain rounded animate-fade-in"
-                          />
-                        </div>
                         <p className="text-gray-600 ml-12">{androidSteps[activeStep.android].description}</p>
                       </div>
                     </div>
@@ -306,19 +271,12 @@ const HowItWorks = () => {
                       </div>
                     </div>
                     
-                    <div className="py-4 min-h-[400px]">
+                    <div className="py-4 min-h-[200px]">
                       <div className="flex items-center gap-4 mb-4">
                         {iphoneSteps[activeStep.iphone].icon}
                         <h5 className="font-bold">{iphoneSteps[activeStep.iphone].title}</h5>
                       </div>
                       <div className="mb-4">
-                        <div className="border rounded-md overflow-hidden shadow-sm mb-4 bg-gray-50 p-2">
-                          <img 
-                            src={iphoneSteps[activeStep.iphone].image || "/placeholder.svg"} 
-                            alt={`iPhone step ${activeStep.iphone + 1}`}
-                            className="mx-auto h-64 object-contain rounded animate-fade-in"
-                          />
-                        </div>
                         <p className="text-gray-600 ml-12">{iphoneSteps[activeStep.iphone].description}</p>
                       </div>
                     </div>
