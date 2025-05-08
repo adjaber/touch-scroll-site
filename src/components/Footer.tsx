@@ -90,7 +90,7 @@ const Footer = () => {
             <ul className="space-y-2 text-gray-300">
               <li className="flex items-center gap-2">
                 <span>Email:</span> 
-                <a href="mailto:adjebbar@zohomail.com" className="hover:text-green-400">adjebbar@zohomail.com</a>
+                <a href="mailto:info@ecoesim.shop" className="hover:text-green-400">info@ecoesim.shop</a>
               </li>
               <li className="flex items-center gap-2">
                 <span>{language === 'ar' ? 'الهاتف: ' : 'Phone: '}</span>
