@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Globe, Smartphone, Zap, Map, ArrowDown, Phone } from "lucide-react";
+import { Globe, Smartphone, Zap, Map, ArrowDown, Phone, Check } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from '@/context/LanguageContext';
 import { translations } from '@/translations';
@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/accordion";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const HowItWorks = () => {
   const { language } = useLanguage();
@@ -168,6 +169,7 @@ const HowItWorks = () => {
           ))}
         </div>
 
+        {/* New eSIM Activation Guide */}
         <div className="mt-16">
           <h3 className="text-2xl font-bold text-center mb-8">
             {language === 'ar' ? 'كيفية تفعيل بطاقة eSIM الخاصة بك' : 
@@ -175,143 +177,212 @@ const HowItWorks = () => {
              'How to Activate Your eSIM'}
           </h3>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Android Activation Guide */}
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center gap-3 mb-4">
-                <Smartphone className="h-6 w-6 text-travel-orange" />
-                <h4 className="text-xl font-bold">
-                  {language === 'ar' ? 'أجهزة Android' : 
-                   language === 'fr' ? 'Appareils Android' : 
-                   'Android Devices'}
-                </h4>
-              </div>
-              
-              <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="android-steps">
-                  <AccordionTrigger className="text-travel-orange hover:text-travel-orange">
-                    {language === 'ar' ? 'عرض الخطوات التفصيلية' : 
-                     language === 'fr' ? 'Voir les étapes détaillées' : 
-                     'View Detailed Steps'}
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    <div className="mt-2 mb-4">
-                      <Progress value={(activeStep.android / (androidSteps.length - 1)) * 100} className="h-2 bg-gray-200" />
-                      <div className="flex justify-between mt-1 text-xs text-gray-500">
-                        <span>{language === 'ar' ? 'البداية' : language === 'fr' ? 'Début' : 'Start'}</span>
-                        <span>{language === 'ar' ? 'النهاية' : language === 'fr' ? 'Fin' : 'End'}</span>
-                      </div>
-                    </div>
-
-                    <div className="py-4 min-h-[200px]">
-                      <div className="flex items-center gap-4 mb-4">
-                        {androidSteps[activeStep.android].icon}
-                        <h5 className="font-bold">{androidSteps[activeStep.android].title}</h5>
-                      </div>
-                      <div className="mb-4">
-                        <p className="text-gray-600 ml-12">{androidSteps[activeStep.android].description}</p>
-                      </div>
-                    </div>
-
-                    <div className="flex justify-between mt-4">
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        onClick={() => handleStepChange('android', 'prev')} 
-                        disabled={activeStep.android === 0}
-                        className={language === 'ar' ? 'flex flex-row-reverse' : ''}
-                      >
-                        <ArrowDown className={`h-4 w-4 rotate-90 ${language === 'ar' ? 'ml-2' : 'mr-2'}`} />
-                        {language === 'ar' ? 'السابق' : 
-                         language === 'fr' ? 'Précédent' : 
-                         'Previous'}
-                      </Button>
-                      <Button 
-                        size="sm"
-                        variant={activeStep.android === androidSteps.length - 1 ? "outline" : "default"}
-                        onClick={() => handleStepChange('android', 'next')} 
-                        disabled={activeStep.android === androidSteps.length - 1}
-                        className={`bg-travel-orange hover:bg-travel-orange/90 ${language === 'ar' ? 'flex flex-row-reverse' : ''}`}
-                      >
-                        {language === 'ar' ? 'التالي' : 
-                         language === 'fr' ? 'Suivant' : 
-                         'Next'}
-                        <ArrowDown className={`h-4 w-4 -rotate-90 ${language === 'ar' ? 'mr-2' : 'ml-2'}`} />
-                      </Button>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+          <Tabs defaultValue="android" className="w-full">
+            <div className="flex justify-center mb-6">
+              <TabsList>
+                <TabsTrigger value="android" className="flex items-center gap-2">
+                  <Smartphone className="h-4 w-4" /> 
+                  {language === 'ar' ? 'أندرويد' : 
+                   language === 'fr' ? 'Android' : 
+                   'Android'}
+                </TabsTrigger>
+                <TabsTrigger value="iphone" className="flex items-center gap-2">
+                  <Phone className="h-4 w-4" /> 
+                  {language === 'ar' ? 'آيفون' : 
+                   language === 'fr' ? 'iPhone' : 
+                   'iPhone'}
+                </TabsTrigger>
+              </TabsList>
             </div>
 
-            {/* iPhone Activation Guide */}
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center gap-3 mb-4">
-                <Phone className="h-6 w-6 text-travel-blue" />
-                <h4 className="text-xl font-bold">
-                  {language === 'ar' ? 'أجهزة iPhone' : 
-                   language === 'fr' ? 'Appareils iPhone' : 
-                   'iPhone Devices'}
+            {/* Android Tab Content */}
+            <TabsContent value="android" className="px-2">
+              <div className="bg-white rounded-lg shadow-md p-6">
+                <h4 className="text-xl font-bold text-center text-travel-orange mb-6">
+                  {language === 'ar' ? 'تفعيل eSIM على أندرويد' : 
+                   language === 'fr' ? 'Activation de l\'eSIM sur Android' : 
+                   'Android eSIM Activation'}
                 </h4>
+                
+                <div className="max-w-4xl mx-auto">
+                  {/* Steps List */}
+                  <ol className="relative">
+                    {androidSteps.map((step, index) => (
+                      <li key={index} className={`mb-10 ms-6 ${index === androidSteps.length - 1 ? '' : 'pb-8 border-s border-gray-200'}`}>
+                        <div className={`absolute flex items-center justify-center w-10 h-10 rounded-full -start-5 ring-4 ring-white ${index === activeStep.android ? 'bg-travel-orange text-white' : 'bg-gray-100'}`}>
+                          {index === activeStep.android ? 
+                            step.icon : 
+                            <span className="text-gray-500 font-bold">{index + 1}</span>
+                          }
+                        </div>
+                        <div 
+                          className={`p-4 bg-white border border-gray-200 rounded-lg shadow-sm transition-all ${
+                            index === activeStep.android ? 'ring-2 ring-travel-orange' : ''
+                          }`}
+                          onClick={() => setActiveStep({...activeStep, android: index})}
+                        >
+                          <div className="flex items-center mb-1">
+                            <h3 className="text-lg font-semibold text-travel-orange">{step.title}</h3>
+                            {index < activeStep.android && (
+                              <Check className="w-5 h-5 ml-2 text-green-500" />
+                            )}
+                          </div>
+                          <p className="mb-2 text-gray-600">{step.description}</p>
+                          {index === activeStep.android && (
+                            <div className="mt-4 flex justify-between">
+                              <Button 
+                                variant="outline" 
+                                size="sm"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleStepChange('android', 'prev');
+                                }}
+                                disabled={index === 0}
+                                className="text-travel-orange border-travel-orange hover:bg-travel-orange/10"
+                              >
+                                <ArrowDown className="h-4 w-4 rotate-90 mr-1" />
+                                {language === 'ar' ? 'السابق' : 
+                                 language === 'fr' ? 'Précédent' : 
+                                 'Previous'}
+                              </Button>
+                              
+                              <Button 
+                                size="sm"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleStepChange('android', 'next');
+                                }}
+                                disabled={index === androidSteps.length - 1}
+                                className="bg-travel-orange hover:bg-travel-orange/90"
+                              >
+                                {language === 'ar' ? 'التالي' : 
+                                 language === 'fr' ? 'Suivant' : 
+                                 'Next'}
+                                <ArrowDown className="h-4 w-4 -rotate-90 ml-1" />
+                              </Button>
+                            </div>
+                          )}
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                  
+                  {/* Progress indicator */}
+                  <div className="mt-4 mb-4">
+                    <div className="flex justify-between mb-1">
+                      <span className="text-sm font-medium text-travel-orange">
+                        {language === 'ar' ? 'التقدم' : 
+                         language === 'fr' ? 'Progression' : 
+                         'Progress'}
+                      </span>
+                      <span className="text-sm font-medium text-travel-orange">
+                        {((activeStep.android + 1) / androidSteps.length * 100).toFixed(0)}%
+                      </span>
+                    </div>
+                    <Progress 
+                      value={(activeStep.android / (androidSteps.length - 1)) * 100} 
+                      className="h-2 bg-gray-200"
+                      indicatorClassName="bg-travel-orange"
+                    />
+                  </div>
+                </div>
               </div>
-              
-              <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="iphone-steps">
-                  <AccordionTrigger className="text-travel-blue hover:text-travel-blue">
-                    {language === 'ar' ? 'عرض الخطوات التفصيلية' : 
-                     language === 'fr' ? 'Voir les étapes détaillées' : 
-                     'View Detailed Steps'}
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    <div className="mt-2 mb-4">
-                      <Progress value={(activeStep.iphone / (iphoneSteps.length - 1)) * 100} className="h-2 bg-gray-200" />
-                      <div className="flex justify-between mt-1 text-xs text-gray-500">
-                        <span>{language === 'ar' ? 'البداية' : language === 'fr' ? 'Début' : 'Start'}</span>
-                        <span>{language === 'ar' ? 'النهاية' : language === 'fr' ? 'Fin' : 'End'}</span>
-                      </div>
-                    </div>
-                    
-                    <div className="py-4 min-h-[200px]">
-                      <div className="flex items-center gap-4 mb-4">
-                        {iphoneSteps[activeStep.iphone].icon}
-                        <h5 className="font-bold">{iphoneSteps[activeStep.iphone].title}</h5>
-                      </div>
-                      <div className="mb-4">
-                        <p className="text-gray-600 ml-12">{iphoneSteps[activeStep.iphone].description}</p>
-                      </div>
-                    </div>
+            </TabsContent>
 
-                    <div className="flex justify-between mt-4">
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        onClick={() => handleStepChange('iphone', 'prev')} 
-                        disabled={activeStep.iphone === 0}
-                        className={language === 'ar' ? 'flex flex-row-reverse' : ''}
-                      >
-                        <ArrowDown className={`h-4 w-4 rotate-90 ${language === 'ar' ? 'ml-2' : 'mr-2'}`} />
-                        {language === 'ar' ? 'السابق' : 
-                         language === 'fr' ? 'Précédent' : 
-                         'Previous'}
-                      </Button>
-                      <Button 
-                        size="sm"
-                        variant={activeStep.iphone === iphoneSteps.length - 1 ? "outline" : "default"}
-                        onClick={() => handleStepChange('iphone', 'next')} 
-                        disabled={activeStep.iphone === iphoneSteps.length - 1}
-                        className={`bg-travel-blue hover:bg-travel-blue/90 ${language === 'ar' ? 'flex flex-row-reverse' : ''}`}
-                      >
-                        {language === 'ar' ? 'التالي' : 
-                         language === 'fr' ? 'Suivant' : 
-                         'Next'}
-                        <ArrowDown className={`h-4 w-4 -rotate-90 ${language === 'ar' ? 'mr-2' : 'ml-2'}`} />
-                      </Button>
+            {/* iPhone Tab Content */}
+            <TabsContent value="iphone" className="px-2">
+              <div className="bg-white rounded-lg shadow-md p-6">
+                <h4 className="text-xl font-bold text-center text-travel-blue mb-6">
+                  {language === 'ar' ? 'تفعيل eSIM على آيفون' : 
+                   language === 'fr' ? 'Activation de l\'eSIM sur iPhone' : 
+                   'iPhone eSIM Activation'}
+                </h4>
+
+                <div className="max-w-4xl mx-auto">
+                  {/* Steps List */}
+                  <ol className="relative">
+                    {iphoneSteps.map((step, index) => (
+                      <li key={index} className={`mb-10 ms-6 ${index === iphoneSteps.length - 1 ? '' : 'pb-8 border-s border-gray-200'}`}>
+                        <div className={`absolute flex items-center justify-center w-10 h-10 rounded-full -start-5 ring-4 ring-white ${index === activeStep.iphone ? 'bg-travel-blue text-white' : 'bg-gray-100'}`}>
+                          {index === activeStep.iphone ? 
+                            step.icon : 
+                            <span className="text-gray-500 font-bold">{index + 1}</span>
+                          }
+                        </div>
+                        <div 
+                          className={`p-4 bg-white border border-gray-200 rounded-lg shadow-sm transition-all ${
+                            index === activeStep.iphone ? 'ring-2 ring-travel-blue' : ''
+                          }`}
+                          onClick={() => setActiveStep({...activeStep, iphone: index})}
+                        >
+                          <div className="flex items-center mb-1">
+                            <h3 className="text-lg font-semibold text-travel-blue">{step.title}</h3>
+                            {index < activeStep.iphone && (
+                              <Check className="w-5 h-5 ml-2 text-green-500" />
+                            )}
+                          </div>
+                          <p className="mb-2 text-gray-600">{step.description}</p>
+                          {index === activeStep.iphone && (
+                            <div className="mt-4 flex justify-between">
+                              <Button 
+                                variant="outline" 
+                                size="sm"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleStepChange('iphone', 'prev');
+                                }}
+                                disabled={index === 0}
+                                className="text-travel-blue border-travel-blue hover:bg-travel-blue/10"
+                              >
+                                <ArrowDown className="h-4 w-4 rotate-90 mr-1" />
+                                {language === 'ar' ? 'السابق' : 
+                                 language === 'fr' ? 'Précédent' : 
+                                 'Previous'}
+                              </Button>
+                              
+                              <Button 
+                                size="sm"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleStepChange('iphone', 'next');
+                                }}
+                                disabled={index === iphoneSteps.length - 1}
+                                className="bg-travel-blue hover:bg-travel-blue/90"
+                              >
+                                {language === 'ar' ? 'التالي' : 
+                                 language === 'fr' ? 'Suivant' : 
+                                 'Next'}
+                                <ArrowDown className="h-4 w-4 -rotate-90 ml-1" />
+                              </Button>
+                            </div>
+                          )}
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                  
+                  {/* Progress indicator */}
+                  <div className="mt-4 mb-4">
+                    <div className="flex justify-between mb-1">
+                      <span className="text-sm font-medium text-travel-blue">
+                        {language === 'ar' ? 'التقدم' : 
+                         language === 'fr' ? 'Progression' : 
+                         'Progress'}
+                      </span>
+                      <span className="text-sm font-medium text-travel-blue">
+                        {((activeStep.iphone + 1) / iphoneSteps.length * 100).toFixed(0)}%
+                      </span>
                     </div>
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </div>
-          </div>
+                    <Progress 
+                      value={(activeStep.iphone / (iphoneSteps.length - 1)) * 100} 
+                      className="h-2 bg-gray-200" 
+                      indicatorClassName="bg-travel-blue"
+                    />
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </div>
     </section>
