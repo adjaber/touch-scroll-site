@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Globe, Smartphone, Zap, Map, ArrowDown, Phone, Check } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -45,7 +44,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Accédez à "Paramètres" sur votre téléphone Android' 
         : 'Navigate to "Settings" on your Android phone',
-      image: '/assets/android-settings.jpg',
+      image: 'https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=300&h=600&fit=crop&crop=center',
       icon: <Smartphone className="h-8 w-8 text-travel-orange" />
     },
     {
@@ -55,7 +54,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Appuyez sur "Réseau et Internet" ou "Connexions"' 
         : 'Tap on "Network & Internet" or "Connections"',
-      image: '/assets/android-network.jpg',
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=300&h=600&fit=crop&crop=center',
       icon: <Globe className="h-8 w-8 text-travel-blue" />
     },
     {
@@ -65,7 +64,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Sélectionnez "Cartes SIM" ou "Gestion des cartes SIM"' 
         : 'Select "SIM cards" or "SIM card manager"',
-      image: '/assets/android-sim-cards.jpg',
+      image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=300&h=600&fit=crop&crop=center',
       icon: <Phone className="h-8 w-8 text-travel-purple" />
     },
     {
@@ -75,7 +74,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Appuyez sur "Ajouter un forfait de données" ou "Ajouter une eSIM"' 
         : 'Tap on "Add data plan" or "Add eSIM"',
-      image: '/assets/android-add-esim.jpg',
+      image: 'https://images.unsplash.com/photo-1563203369-26f2e4a5ccf7?w=300&h=600&fit=crop&crop=center',
       icon: <Zap className="h-8 w-8 text-travel-teal" />
     },
     {
@@ -85,7 +84,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Scannez le code QR ecoESIM ou entrez le code manuellement' 
         : 'Scan the ecoESIM QR code or enter the code manually',
-      image: '/assets/android-scan-qr.jpg',
+      image: 'https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?w=300&h=600&fit=crop&crop=center',
       icon: <Smartphone className="h-8 w-8 text-travel-orange" />
     }
   ];
@@ -98,7 +97,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Accédez à l\'application "Paramètres" sur votre iPhone' 
         : 'Navigate to the "Settings" app on your iPhone',
-      image: '/assets/iphone-settings.jpg',
+      image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=300&h=600&fit=crop&crop=center',
       icon: <Smartphone className="h-8 w-8 text-travel-orange" />
     },
     {
@@ -108,7 +107,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Sélectionnez "Cellulaire" ou "Données cellulaires"' 
         : 'Select "Cellular" or "Mobile Data"',
-      image: '/assets/iphone-cellular.jpg',
+      image: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300&h=600&fit=crop&crop=center',
       icon: <Phone className="h-8 w-8 text-travel-blue" />
     },
     {
@@ -118,7 +117,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Appuyez sur "Ajouter un forfait de données"' 
         : 'Tap on "Add Cellular Plan"',
-      image: '/assets/iphone-add-plan.jpg',
+      image: 'https://images.unsplash.com/photo-1601972602237-8c79241e468b?w=300&h=600&fit=crop&crop=center',
       icon: <Zap className="h-8 w-8 text-travel-purple" />
     },
     {
@@ -128,7 +127,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Scannez le code QR ecoESIM ou entrez le code manuellement' 
         : 'Scan the ecoESIM QR code or enter the code manually',
-      image: '/assets/iphone-scan-qr.jpg',
+      image: 'https://images.unsplash.com/photo-1574273670389-4b18e13ee5d3?w=300&h=600&fit=crop&crop=center',
       icon: <Globe className="h-8 w-8 text-travel-teal" />
     },
     {
@@ -138,7 +137,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Appuyez sur "Confirmer" et attendez que votre eSIM soit activée' 
         : 'Tap "Confirm" and wait for your eSIM to be activated',
-      image: '/assets/iphone-confirm.jpg',
+      image: 'https://images.unsplash.com/photo-1533228876829-65c94e7b5025?w=300&h=600&fit=crop&crop=center',
       icon: <Smartphone className="h-8 w-8 text-travel-orange" />
     }
   ];
