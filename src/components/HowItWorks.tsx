@@ -13,6 +13,13 @@ import {
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const HowItWorks = () => {
   const { language } = useLanguage();
@@ -29,7 +36,7 @@ const HowItWorks = () => {
     <Map className="h-10 w-10 text-travel-teal" />
   ];
 
-  // eSIM activation steps
+  // eSIM activation steps with images
   const androidSteps = [
     {
       title: language === 'ar' ? 'افتح الإعدادات' : language === 'fr' ? 'Ouvrez Paramètres' : 'Open Settings',
@@ -38,6 +45,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Accédez à "Paramètres" sur votre téléphone Android' 
         : 'Navigate to "Settings" on your Android phone',
+      image: '/assets/android-settings.jpg',
       icon: <Smartphone className="h-8 w-8 text-travel-orange" />
     },
     {
@@ -47,6 +55,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Appuyez sur "Réseau et Internet" ou "Connexions"' 
         : 'Tap on "Network & Internet" or "Connections"',
+      image: '/assets/android-network.jpg',
       icon: <Globe className="h-8 w-8 text-travel-blue" />
     },
     {
@@ -56,6 +65,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Sélectionnez "Cartes SIM" ou "Gestion des cartes SIM"' 
         : 'Select "SIM cards" or "SIM card manager"',
+      image: '/assets/android-sim-cards.jpg',
       icon: <Phone className="h-8 w-8 text-travel-purple" />
     },
     {
@@ -65,6 +75,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Appuyez sur "Ajouter un forfait de données" ou "Ajouter une eSIM"' 
         : 'Tap on "Add data plan" or "Add eSIM"',
+      image: '/assets/android-add-esim.jpg',
       icon: <Zap className="h-8 w-8 text-travel-teal" />
     },
     {
@@ -74,6 +85,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Scannez le code QR ecoESIM ou entrez le code manuellement' 
         : 'Scan the ecoESIM QR code or enter the code manually',
+      image: '/assets/android-scan-qr.jpg',
       icon: <Smartphone className="h-8 w-8 text-travel-orange" />
     }
   ];
@@ -86,6 +98,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Accédez à l\'application "Paramètres" sur votre iPhone' 
         : 'Navigate to the "Settings" app on your iPhone',
+      image: '/assets/iphone-settings.jpg',
       icon: <Smartphone className="h-8 w-8 text-travel-orange" />
     },
     {
@@ -95,6 +108,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Sélectionnez "Cellulaire" ou "Données cellulaires"' 
         : 'Select "Cellular" or "Mobile Data"',
+      image: '/assets/iphone-cellular.jpg',
       icon: <Phone className="h-8 w-8 text-travel-blue" />
     },
     {
@@ -104,6 +118,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Appuyez sur "Ajouter un forfait de données"' 
         : 'Tap on "Add Cellular Plan"',
+      image: '/assets/iphone-add-plan.jpg',
       icon: <Zap className="h-8 w-8 text-travel-purple" />
     },
     {
@@ -113,6 +128,7 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Scannez le code QR ecoESIM ou entrez le code manuellement' 
         : 'Scan the ecoESIM QR code or enter the code manually',
+      image: '/assets/iphone-scan-qr.jpg',
       icon: <Globe className="h-8 w-8 text-travel-teal" />
     },
     {
@@ -122,25 +138,10 @@ const HowItWorks = () => {
         : language === 'fr' 
         ? 'Appuyez sur "Confirmer" et attendez que votre eSIM soit activée' 
         : 'Tap "Confirm" and wait for your eSIM to be activated',
+      image: '/assets/iphone-confirm.jpg',
       icon: <Smartphone className="h-8 w-8 text-travel-orange" />
     }
   ];
-
-  const handleStepChange = (device, direction) => {
-    if (device === 'android') {
-      if (direction === 'next' && activeStep.android < androidSteps.length - 1) {
-        setActiveStep({...activeStep, android: activeStep.android + 1});
-      } else if (direction === 'prev' && activeStep.android > 0) {
-        setActiveStep({...activeStep, android: activeStep.android - 1});
-      }
-    } else {
-      if (direction === 'next' && activeStep.iphone < iphoneSteps.length - 1) {
-        setActiveStep({...activeStep, iphone: activeStep.iphone + 1});
-      } else if (direction === 'prev' && activeStep.iphone > 0) {
-        setActiveStep({...activeStep, iphone: activeStep.iphone - 1});
-      }
-    }
-  };
 
   return (
     <section id="how-it-works" className="section-padding bg-gray-50" dir={language === 'ar' ? 'rtl' : 'ltr'}>
@@ -169,7 +170,7 @@ const HowItWorks = () => {
           ))}
         </div>
 
-        {/* New eSIM Activation Guide */}
+        {/* eSIM Activation Guide with Scrollable Images */}
         <div className="mt-16">
           <h3 className="text-2xl font-bold text-center mb-8">
             {language === 'ar' ? 'كيفية تفعيل بطاقة eSIM الخاصة بك' : 
@@ -205,84 +206,64 @@ const HowItWorks = () => {
                 </h4>
                 
                 <div className="max-w-4xl mx-auto">
-                  {/* Steps List */}
-                  <ol className="relative">
-                    {androidSteps.map((step, index) => (
-                      <li key={index} className={`mb-10 ms-6 ${index === androidSteps.length - 1 ? '' : 'pb-8 border-s border-gray-200'}`}>
-                        <div className={`absolute flex items-center justify-center w-10 h-10 rounded-full -start-5 ring-4 ring-white ${index === activeStep.android ? 'bg-travel-orange text-white' : 'bg-gray-100'}`}>
-                          {index === activeStep.android ? 
-                            step.icon : 
-                            <span className="text-gray-500 font-bold">{index + 1}</span>
-                          }
-                        </div>
-                        <div 
-                          className={`p-4 bg-white border border-gray-200 rounded-lg shadow-sm transition-all ${
-                            index === activeStep.android ? 'ring-2 ring-travel-orange' : ''
-                          }`}
-                          onClick={() => setActiveStep({...activeStep, android: index})}
-                        >
-                          <div className="flex items-center mb-1">
-                            <h3 className="text-lg font-semibold text-travel-orange">{step.title}</h3>
-                            {index < activeStep.android && (
-                              <Check className="w-5 h-5 ml-2 text-green-500" />
-                            )}
+                  <Carousel className="w-full">
+                    <CarouselContent>
+                      {androidSteps.map((step, index) => (
+                        <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                          <div className="p-4">
+                            <Card className="border-2 border-travel-orange/20 hover:border-travel-orange/40 transition-colors">
+                              <CardContent className="p-6">
+                                <div className="flex items-center mb-4">
+                                  <div className="w-10 h-10 rounded-full bg-travel-orange text-white flex items-center justify-center mr-3">
+                                    {index + 1}
+                                  </div>
+                                  <h3 className="text-lg font-semibold text-travel-orange">{step.title}</h3>
+                                </div>
+                                
+                                <div className="mb-4 rounded-lg overflow-hidden bg-gray-100 aspect-[9/16] flex items-center justify-center">
+                                  <img 
+                                    src={step.image} 
+                                    alt={step.title}
+                                    className="w-full h-full object-cover"
+                                    onError={(e) => {
+                                      e.currentTarget.style.display = 'none';
+                                      e.currentTarget.nextElementSibling.style.display = 'flex';
+                                    }}
+                                  />
+                                  <div className="hidden w-full h-full bg-gradient-to-br from-travel-orange/10 to-travel-orange/20 flex-col items-center justify-center">
+                                    {step.icon}
+                                    <span className="text-xs text-gray-500 mt-2">Screenshot placeholder</span>
+                                  </div>
+                                </div>
+                                
+                                <p className="text-gray-600 text-sm">{step.description}</p>
+                              </CardContent>
+                            </Card>
                           </div>
-                          <p className="mb-2 text-gray-600">{step.description}</p>
-                          {index === activeStep.android && (
-                            <div className="mt-4 flex justify-between">
-                              <Button 
-                                variant="outline" 
-                                size="sm"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  handleStepChange('android', 'prev');
-                                }}
-                                disabled={index === 0}
-                                className="text-travel-orange border-travel-orange hover:bg-travel-orange/10"
-                              >
-                                <ArrowDown className="h-4 w-4 rotate-90 mr-1" />
-                                {language === 'ar' ? 'السابق' : 
-                                 language === 'fr' ? 'Précédent' : 
-                                 'Previous'}
-                              </Button>
-                              
-                              <Button 
-                                size="sm"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  handleStepChange('android', 'next');
-                                }}
-                                disabled={index === androidSteps.length - 1}
-                                className="bg-travel-orange hover:bg-travel-orange/90"
-                              >
-                                {language === 'ar' ? 'التالي' : 
-                                 language === 'fr' ? 'Suivant' : 
-                                 'Next'}
-                                <ArrowDown className="h-4 w-4 -rotate-90 ml-1" />
-                              </Button>
-                            </div>
-                          )}
-                        </div>
-                      </li>
-                    ))}
-                  </ol>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious />
+                    <CarouselNext />
+                  </Carousel>
                   
                   {/* Progress indicator */}
-                  <div className="mt-4 mb-4">
-                    <div className="flex justify-between mb-1">
+                  <div className="mt-6">
+                    <div className="flex justify-between mb-2">
                       <span className="text-sm font-medium text-travel-orange">
                         {language === 'ar' ? 'التقدم' : 
                          language === 'fr' ? 'Progression' : 
                          'Progress'}
                       </span>
                       <span className="text-sm font-medium text-travel-orange">
-                        {((activeStep.android + 1) / androidSteps.length * 100).toFixed(0)}%
+                        {androidSteps.length} {language === 'ar' ? 'خطوات' : 
+                         language === 'fr' ? 'étapes' : 
+                         'steps'}
                       </span>
                     </div>
                     <Progress 
-                      value={(activeStep.android / (androidSteps.length - 1)) * 100} 
+                      value={100} 
                       className="h-2 bg-gray-200"
-                      indicatorClassName="bg-travel-orange"
                     />
                   </div>
                 </div>
@@ -299,84 +280,64 @@ const HowItWorks = () => {
                 </h4>
 
                 <div className="max-w-4xl mx-auto">
-                  {/* Steps List */}
-                  <ol className="relative">
-                    {iphoneSteps.map((step, index) => (
-                      <li key={index} className={`mb-10 ms-6 ${index === iphoneSteps.length - 1 ? '' : 'pb-8 border-s border-gray-200'}`}>
-                        <div className={`absolute flex items-center justify-center w-10 h-10 rounded-full -start-5 ring-4 ring-white ${index === activeStep.iphone ? 'bg-travel-blue text-white' : 'bg-gray-100'}`}>
-                          {index === activeStep.iphone ? 
-                            step.icon : 
-                            <span className="text-gray-500 font-bold">{index + 1}</span>
-                          }
-                        </div>
-                        <div 
-                          className={`p-4 bg-white border border-gray-200 rounded-lg shadow-sm transition-all ${
-                            index === activeStep.iphone ? 'ring-2 ring-travel-blue' : ''
-                          }`}
-                          onClick={() => setActiveStep({...activeStep, iphone: index})}
-                        >
-                          <div className="flex items-center mb-1">
-                            <h3 className="text-lg font-semibold text-travel-blue">{step.title}</h3>
-                            {index < activeStep.iphone && (
-                              <Check className="w-5 h-5 ml-2 text-green-500" />
-                            )}
+                  <Carousel className="w-full">
+                    <CarouselContent>
+                      {iphoneSteps.map((step, index) => (
+                        <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                          <div className="p-4">
+                            <Card className="border-2 border-travel-blue/20 hover:border-travel-blue/40 transition-colors">
+                              <CardContent className="p-6">
+                                <div className="flex items-center mb-4">
+                                  <div className="w-10 h-10 rounded-full bg-travel-blue text-white flex items-center justify-center mr-3">
+                                    {index + 1}
+                                  </div>
+                                  <h3 className="text-lg font-semibold text-travel-blue">{step.title}</h3>
+                                </div>
+                                
+                                <div className="mb-4 rounded-lg overflow-hidden bg-gray-100 aspect-[9/16] flex items-center justify-center">
+                                  <img 
+                                    src={step.image} 
+                                    alt={step.title}
+                                    className="w-full h-full object-cover"
+                                    onError={(e) => {
+                                      e.currentTarget.style.display = 'none';
+                                      e.currentTarget.nextElementSibling.style.display = 'flex';
+                                    }}
+                                  />
+                                  <div className="hidden w-full h-full bg-gradient-to-br from-travel-blue/10 to-travel-blue/20 flex-col items-center justify-center">
+                                    {step.icon}
+                                    <span className="text-xs text-gray-500 mt-2">Screenshot placeholder</span>
+                                  </div>
+                                </div>
+                                
+                                <p className="text-gray-600 text-sm">{step.description}</p>
+                              </CardContent>
+                            </Card>
                           </div>
-                          <p className="mb-2 text-gray-600">{step.description}</p>
-                          {index === activeStep.iphone && (
-                            <div className="mt-4 flex justify-between">
-                              <Button 
-                                variant="outline" 
-                                size="sm"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  handleStepChange('iphone', 'prev');
-                                }}
-                                disabled={index === 0}
-                                className="text-travel-blue border-travel-blue hover:bg-travel-blue/10"
-                              >
-                                <ArrowDown className="h-4 w-4 rotate-90 mr-1" />
-                                {language === 'ar' ? 'السابق' : 
-                                 language === 'fr' ? 'Précédent' : 
-                                 'Previous'}
-                              </Button>
-                              
-                              <Button 
-                                size="sm"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  handleStepChange('iphone', 'next');
-                                }}
-                                disabled={index === iphoneSteps.length - 1}
-                                className="bg-travel-blue hover:bg-travel-blue/90"
-                              >
-                                {language === 'ar' ? 'التالي' : 
-                                 language === 'fr' ? 'Suivant' : 
-                                 'Next'}
-                                <ArrowDown className="h-4 w-4 -rotate-90 ml-1" />
-                              </Button>
-                            </div>
-                          )}
-                        </div>
-                      </li>
-                    ))}
-                  </ol>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious />
+                    <CarouselNext />
+                  </Carousel>
                   
                   {/* Progress indicator */}
-                  <div className="mt-4 mb-4">
-                    <div className="flex justify-between mb-1">
+                  <div className="mt-6">
+                    <div className="flex justify-between mb-2">
                       <span className="text-sm font-medium text-travel-blue">
                         {language === 'ar' ? 'التقدم' : 
                          language === 'fr' ? 'Progression' : 
                          'Progress'}
                       </span>
                       <span className="text-sm font-medium text-travel-blue">
-                        {((activeStep.iphone + 1) / iphoneSteps.length * 100).toFixed(0)}%
+                        {iphoneSteps.length} {language === 'ar' ? 'خطوات' : 
+                         language === 'fr' ? 'étapes' : 
+                         'steps'}
                       </span>
                     </div>
                     <Progress 
-                      value={(activeStep.iphone / (iphoneSteps.length - 1)) * 100} 
-                      className="h-2 bg-gray-200" 
-                      indicatorClassName="bg-travel-blue"
+                      value={100} 
+                      className="h-2 bg-gray-200"
                     />
                   </div>
                 </div>
