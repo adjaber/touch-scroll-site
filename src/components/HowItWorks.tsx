@@ -227,7 +227,10 @@ const HowItWorks = () => {
                                     className="w-full h-full object-cover"
                                     onError={(e) => {
                                       e.currentTarget.style.display = 'none';
-                                      e.currentTarget.nextElementSibling.style.display = 'flex';
+                                      const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                                      if (nextElement) {
+                                        nextElement.style.display = 'flex';
+                                      }
                                     }}
                                   />
                                   <div className="hidden w-full h-full bg-gradient-to-br from-travel-orange/10 to-travel-orange/20 flex-col items-center justify-center">
@@ -301,7 +304,10 @@ const HowItWorks = () => {
                                     className="w-full h-full object-cover"
                                     onError={(e) => {
                                       e.currentTarget.style.display = 'none';
-                                      e.currentTarget.nextElementSibling.style.display = 'flex';
+                                      const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                                      if (nextElement) {
+                                        nextElement.style.display = 'flex';
+                                      }
                                     }}
                                   />
                                   <div className="hidden w-full h-full bg-gradient-to-br from-travel-blue/10 to-travel-blue/20 flex-col items-center justify-center">
